@@ -1,0 +1,204 @@
+<?php if (!defined('IN_MEGABUGS')) exit; $this->_tpl_include('simple_header.html'); if ($this->_rootref['IS_NOT_RES_USERS']) {  ?>
+<div class="signup-form-warp border-box c-fix default-box">
+	<div class="section-content">
+        <div class="email-error form-messeges alert light"><div class="messege-warp"><span class="messege-text"><?php echo (isset($this->_rootref['LANG_REG_CLOSED'])) ? $this->_rootref['LANG_REG_CLOSED'] : ''; ?></span></div></div>
+    </div>
+</div>
+<?php } else { ?>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".username").on('change',function(){usernamechk();});
+    $(".email").on('change',function(){emailchk();});
+    $(".password").on('change',function(){passwordchk();});
+    $(".firstname").on('change',function(){firstnamechk();});
+    $(".lastname").on('change',function(){lastnamechk();});
+    function firstnamechk(){ 
+    	var firstname = $(".firstname").val();
+    	$(".firstname-error").addClass('hidden').removeClass('error');
+    	$(".firstname-error .messege-text").html('');
+    	$(".firstname.form-textbox").removeClass('error');
+    	if(!firstname){
+    	  $(".firstname-error").removeClass('hidden').addClass('error');
+    	  $(".firstname-error .messege-text").html('<?php echo (isset($this->_rootref['LANG_FIRST_NAME_IS_REQUIRED'])) ? $this->_rootref['LANG_FIRST_NAME_IS_REQUIRED'] : ''; ?>');
+    	  $(".firstname.form-textbox").addClass('error');
+          return false;
+    	}
+    }
+    function lastnamechk(){ 
+    	var lastname = $(".lastname").val();
+    	$(".lastname-error").addClass('hidden').removeClass('error');
+    	$(".lastname-error .messege-text").html('');
+    	$(".lastname.form-textbox").removeClass('error');
+    	if(!lastname){
+    	  $(".lastname-error").removeClass('hidden').addClass('error');
+    	  $(".lastname-error .messege-text").html('<?php echo (isset($this->_rootref['LANG_LAST_NAME_IS_REQUIRED'])) ? $this->_rootref['LANG_LAST_NAME_IS_REQUIRED'] : ''; ?>');
+    	  $(".lastname.form-textbox").addClass('error');
+          return false;
+    	}
+    }
+    function usernamechk(){ 
+    	var english = /^[a-zA-Z0-9_]*$/;
+    	var username = $(".username").val();
+    	$(".username-error").addClass('hidden').removeClass('error done');
+    	$(".username-error .messege-text").html('');
+    	if (english.test(username) && username.length > 2){
+    	  userexist(username);
+    	}else{
+    	  $(".username-error").removeClass('hidden').addClass('error');
+    	  $(".username-error .messege-text").html('<?php echo (isset($this->_rootref['LANG_MSG_NAME_MUST_BE_IN_ENGLISH'])) ? $this->_rootref['LANG_MSG_NAME_MUST_BE_IN_ENGLISH'] : ''; ?>');
+    	  $(".username.form-textbox").addClass('error');
+    	  $(".username").parent().removeClass('input-loading');
+    	}
+    }
+    function userexist(username){ 
+        var url = "ajax.php?do=userexist&uname="+username;
+        $(".username").parent().addClass('input-loading');
+        $.get(url, function( response, status, xhr ){
+            $(".username-error .messege-text").html(xhr.responseText);
+            $(".username-error").removeClass('hidden');
+            $(".username").parent().removeClass('input-loading');
+            var errors = $(".username-error .error").size();
+            if(!errors){
+              $(".username").removeClass('error');
+              $(".username-error").addClass('done').removeClass('error');
+            }else{
+              $(".username").addClass('error');
+              $(".username-error").addClass('error').removeClass('done');
+              return false;
+            }
+        });
+    }
+    function emailchk(){ 
+    	var regex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    	var email = $(".email").val();
+    	$(".email-error").addClass('hidden').removeClass('error done');
+    	$(".email-error .messege-text").html('');
+    	if (regex.test(email) && email.length > 5){
+    	  emailexist(email);
+    	}else{
+    	  $(".email-error").removeClass('hidden').addClass('error');
+    	  $(".email-error .messege-text").html('<?php echo (isset($this->_rootref['LANG_MAKE_SURE_YOU_WRITE_YOUR_EMAIL_CORRECTLY'])) ? $this->_rootref['LANG_MAKE_SURE_YOU_WRITE_YOUR_EMAIL_CORRECTLY'] : ''; ?>');
+          $(".email.form-textbox").addClass('error');
+    	  $(".email").parent().removeClass('input-loading');
+    	}
+    }
+    function emailexist(email){ 
+    	var url = "ajax.php?do=emailexist&email="+email;
+    	$(".email").parent().addClass('input-loading');
+    	$.get(url, function( response, status, xhr ){
+            $(".email-error .messege-text").html(xhr.responseText);
+            $(".email-error").removeClass('hidden');
+            $(".email").parent().removeClass('input-loading');
+            var errors = $(".email-error .error").size();
+        	if(!errors){
+        	  $(".email").removeClass('error');
+        	  $(".email-error").removeClass('error').addClass('done');
+        	}else{
+        	  $(".email").addClass('error');
+        	  $(".email-error").addClass('error').removeClass('done');
+        	} 
+    	});
+    }
+    function passwordchk(){ 
+    	var password = $(".password").val();
+    	var length = parseInt(password.length);
+    	$(".passwords-error").addClass('hidden').removeClass('error');
+    	$(".passwords-error .messege-text").html('');
+    	$(".password.form-textbox").removeClass('error');
+    	if(length < 6){
+    	  $(".passwords-error").removeClass('hidden').addClass('error');
+    	  $(".passwords-error .messege-text").html('<?php echo (isset($this->_rootref['LANG_PASSWORD_MUST_BE_AT_LEAST_6_CHARACTERS'])) ? $this->_rootref['LANG_PASSWORD_MUST_BE_AT_LEAST_6_CHARACTERS'] : ''; ?>');
+    	  $(".password.form-textbox").addClass('error');
+    	}
+    }
+    $(".submit").on('click',function(){
+    	$(".submit").html('<i class="fa fa-spinner fa-pulse"></i> <?php echo (isset($this->_rootref['LANG_REGISTER'])) ? $this->_rootref['LANG_REGISTER'] : ''; ?>');
+    	firstnamechk();
+        lastnamechk();
+        emailchk();
+        passwordchk();
+    	usernamechk();
+    	setTimeout(function() {
+    	   var errors = $(".messege-warp").parent('.error').size();
+        	if(errors){
+              $(".submit").html('<?php echo (isset($this->_rootref['LANG_REGISTER'])) ? $this->_rootref['LANG_REGISTER'] : ''; ?>');
+        	}else{
+        	  $("#registerform").submit();
+              //location.reload();
+              //window.location.replace("index.php");
+        	}
+        }, 0);
+    });
+});
+</script>
+<div class="signup-form-warp border-box c-fix default-box">
+    <div class="section-content">
+      <form id="registerform" class="form-horizontal" action="users.php?mode=register" method="post">
+        <input name="action" type="hidden" id="action" value="newuser"/>
+        <input type="hidden" name="token" id="" value="<?php echo (isset($this->_rootref['TOKEN'])) ? $this->_rootref['TOKEN'] : ''; ?>" />
+        <div class="form-group section-fullname" id="username">
+            <div class="col-sm-6">
+                <h3 class="section-title"><?php echo (isset($this->_rootref['LANG_FIRSTNAME'])) ? $this->_rootref['LANG_FIRSTNAME'] : ''; ?></h3>
+                <input type="text" placeholder="<?php echo (isset($this->_rootref['LANG_FIRSTNAME'])) ? $this->_rootref['LANG_FIRSTNAME'] : ''; ?>" class="form-control firstname" name="firstname" maxlength="20" />	
+    			<div class="firstname-error form-messeges hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="section-title"><?php echo (isset($this->_rootref['LANG_LASTNAME'])) ? $this->_rootref['LANG_LASTNAME'] : ''; ?></h3>
+                <input type="text" placeholder="<?php echo (isset($this->_rootref['LANG_LASTNAME'])) ? $this->_rootref['LANG_LASTNAME'] : ''; ?>" class="form-control lastname" name="lastname" maxlength="20" />
+    			<div class="lastname-error form-messeges hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group section-username">
+            <div class="col-sm-12">
+                <h3 class="section-title"><?php echo (isset($this->_rootref['LANG_USERNAME'])) ? $this->_rootref['LANG_USERNAME'] : ''; ?></h3>
+                <div class="dual-input-warp">
+                    <input type="text" placeholder="<?php echo (isset($this->_rootref['LANG_ENGLISH_ONLY_CHARACTERS'])) ? $this->_rootref['LANG_ENGLISH_ONLY_CHARACTERS'] : ''; ?>" name="username" class="username form-control" maxlength="16" />
+                    <div class="username-error form-messeges hidden">
+                        <div class="messege-warp">
+                            <span class="messege-text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group section-email">
+            <div class="col-sm-12">
+                <h3 class="section-title"><?php echo (isset($this->_rootref['LANG_EMAIL_ADDRESS'])) ? $this->_rootref['LANG_EMAIL_ADDRESS'] : ''; ?></h3>
+                <input type="text" placeholder="<?php echo (isset($this->_rootref['LANG_EMAIL_ADDRESS'])) ? $this->_rootref['LANG_EMAIL_ADDRESS'] : ''; ?>" class="email form-control" name="email" />	
+                <div class="email-error form-messeges hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text"><span class="messege error"><?php echo (isset($this->_rootref['LANG_THIS_EMAIL_USER_BY_ANOTHER_USER'])) ? $this->_rootref['LANG_THIS_EMAIL_USER_BY_ANOTHER_USER'] : ''; ?></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group section-password">
+            <div class="col-sm-12">
+                <h3 class="section-title"><?php echo (isset($this->_rootref['LANG_PASSWORD'])) ? $this->_rootref['LANG_PASSWORD'] : ''; ?></h3>
+                <input type="password" placeholder="<?php echo (isset($this->_rootref['LANG_PASSWORD'])) ? $this->_rootref['LANG_PASSWORD'] : ''; ?>" class="form-control password" name="password" />
+                <div class="passwords-error form-messeges hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12 align-center">
+                <a class="section-btn form-button btn-block form-button-green submit"><?php echo (isset($this->_rootref['LANG_REGISTER'])) ? $this->_rootref['LANG_REGISTER'] : ''; ?></a> &nbsp;&nbsp;
+            </div>
+            <div class="col-sm-12 align-center simple-messeges">
+            <?php echo (isset($this->_rootref['LANG_IF_YOU_ALREADY_HAVE_AN_ACCOUNT'])) ? $this->_rootref['LANG_IF_YOU_ALREADY_HAVE_AN_ACCOUNT'] : ''; ?>  <a href="users.php?mode=login"><?php echo (isset($this->_rootref['LANG_CLICK_HERE_TO_LOGIN'])) ? $this->_rootref['LANG_CLICK_HERE_TO_LOGIN'] : ''; ?></a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } $this->_tpl_include('simple_footer.html'); ?>

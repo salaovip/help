@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Documentation - PHP Help Manager v 2.0</title>
+	<style type="text/css" media="screen">
+	body { 
+		font-family: 'Segoe UI', Tahoma, Arial, Verdana, sans-serif; 
+		font-size: 14px; 
+		background: #e8ebed; 
+		color: #000; 
+	}
+	h1 { color: #666;
+		font-family: "Segoe UI", Tahoma, Arial, Verdana, sans-serif;
+		font-weight: normal;
+	}
+	h2 {
+		color: #666;
+		font-family: "Segoe UI", Tahoma, Arial, Verdana, sans-serif; 
+		font-weight: normal;
+		margin-top: 0;
+	}
+	h3 {
+		color: #222;
+		font-family: "Segoe UI", Tahoma, Arial, Verdana, sans-serif; 
+		font-weight: normal;
+		margin: 0 0 10px 0;
+	}
+	p, table, hr, .box { margin-bottom:25px; }
+	.box p { margin-bottom:10px; }
+	a { color: #4c66a4;}
+	a:hover { color: #1e346a;}
+	.row-body {
+		border-bottom: 0;
+		margin: 0 auto;
+		width: 920px;
+		overflow: auto;
+	}
+	.message-container {
+		padding: 0 20px 10px 10px;
+	}
+	.message-form-content {
+		box-shadow: 0px 1px 1px #CCC;
+		border: 1px solid #BFBFBF;
+		background: #FFF;
+		color: #6B6B6B;
+		border-radius: 3px;
+		overflow: auto;
+	}
+	.message-inner {
+		padding: 10px;
+		float: left;
+	}
+	.divider {
+		height: 1px;
+		width: 100%;
+		background: #DEE0E3;
+		float: left;
+	}
+	.logo {
+		background: url('logo.png');
+		width: 245px;
+		height: 45px;
+		float: left;
+		margin: 0 15px 0 0;
+	}
+	.doc-menu {
+        width: 560px;
+        float: right;
+        margin: 15px 0;
+        text-align: right;
+    }
+	.doc-menu a {
+		font-family: 'Segoe UI', Tahoma, Arial, Verdana, sans-serif;
+		font-weight: bold;
+		margin-right: 20px;
+		color: #4c66a4;
+		text-decoration: none;
+	}
+	.doc-menu a:hover {
+		color: #1e346a;
+	}
+	.about {
+		text-align: right;
+		float: left;
+		width: 850px;
+	}
+	.thank-you {
+		margin: 10px;
+		background: #DFDFDF;
+		color: #5A5A5A;
+		overflow: auto;
+		float: left;
+		padding: 10px;
+		font-weight: bold;
+	}
+	.inner-inner {
+		padding: 0 10px;
+	}
+	.developers-color {
+		color: #4C72D6;
+	}
+	</style>
+</head>
+<body id="top">
+	<div class="row-body">
+		<div class="message-container">
+			<div class="message-form-content">
+				<div class="message-inner">
+					<a href="http://codecanyon.net/user/themearabia" target="_blank"><div class="logo"></div></a>
+					<div class="doc-menu">
+                        <a href="#preparing">Preparing</a> 
+                        <a href="#installation">Installation</a> 
+                        <a href="#configuration">Configuration</a> 
+                        <a href="#faq">Faq</a>
+                    </div>
+				</div>
+				<div class="divider"></div>
+				<div class="message-inner">
+					<div class="about">Documentation by <a href="http://codecanyon.net/user/themearabia" target="_blank">themearabia</a></div>
+				</div>
+				<div class="divider"></div>
+					<div class="thank-you">Thank you for purchasing <a href="http://codecanyon.net/user/themearabia" target="_blank">PHP Help Manager</a> software. If you have any questions that are beyond the scope of this documentation, please feel free to contact me trough <a href="http://codecanyon.net/user/themearabia#contact" target="_blank">this form</a>.</div>
+				<div class="divider"></div>
+				<div class="message-inner">
+					<h2 id="toc" class="alt">Table of Contents</h2>
+					<ol class="alpha">
+						<li><a href="#preparing">Preparing...</a></li>
+						<li><a href="#installation">Installation process...</a></li>
+						<li><a href="#configuration">Configuration process...</a></li>
+						<li><a href="#faq">FAQ...</a></li>
+					</ol>
+				</div>
+				<div class="divider"></div>
+				<div class="message-inner">
+					<h3 id="preparing"><strong>1. Preparing</strong> - <a href="#top">top</a></h3>
+					Make sure you have the following:
+					<ol>
+						<li><strong>PHP 5.3+</strong></li>
+						<li><strong>MySQLi Extension</strong></li>
+					</ol>
+				</div>
+				<div class="divider"></div>
+				<div class="message-inner">
+
+					<h3 id="installation"><strong>2. Installation Process</strong> - <a href="#top">top</a></h3>
+					<ol>
+						<li>
+							Upload the files from the "Script" folder on the FTP server (usually <strong>public_html</strong> folder when installing it on a domain).
+						</li>
+						<li>
+							Set the <strong>CHMOD</strong> to 777 or 775 (depending on the server configuration) to the following folders: 
+                            <br />
+<pre>
+admin/mega-cache
+mega-cache
+uploads
+</pre>
+						</li>
+                        
+                        <li>
+							Goto URL web site <strong>http://url.com/<span style="color: #CC2109;">setup/install.php</span></strong> Click button Begin Install :)
+						</li>
+                        <li>
+							Delete folder <strong>http://url.com/<span style="color: #CC2109;">setup</span></strong>
+						</li>
+                        
+					</ol>
+				
+				</div>
+				<div class="divider"></div>
+				<div class="message-inner">
+					
+					<h3 id="configuration"><strong>3. Configuration</strong> - <a href="#top">top</a></h3>
+					<div class="inner-inner">
+						<li><strong>Dashboard</strong><br /></li><br />
+						<li><strong>Knowledge Base</strong><br /></li>
+                        &nbsp;&nbsp;Allows you to add certain knowledgebase and categories.<br /><br />
+                        <li><strong>News</strong><br /></li>
+                        &nbsp;&nbsp;Allows you to add certain news and categories.<br /><br />
+                        <li><strong>FAQ</strong><br /></li>
+                        &nbsp;&nbsp;Allows you to add certain FAQ and categories.<br /><br />
+                        <li><strong>Pages</strong><br /></li>
+                        &nbsp;&nbsp;Allows you to add certain pages.<br /><br />
+                        <li><strong>Appearance</strong><br /></li>
+                        &nbsp;&nbsp;- Themes Setting<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows you to change the whole website layout, the current theme enabled is marked <span style="color: #3e7b1a;"><strong>Active</strong></span>.<br /><br />
+                        &nbsp;&nbsp;- Theme Options<br /><br />
+						<li><strong>Setting</strong><br /></li>
+                        &nbsp;&nbsp;- General Setting<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows you to change various settings about the website and limitations.<br /><br />
+                        &nbsp;&nbsp;- Socials Setting<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows you to change Socials Setting.<br /><br />
+                        &nbsp;&nbsp;- Users Setting<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows you to change Users Setting.<br /><br />
+                        &nbsp;&nbsp;- Pages  Setting<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows you to change Pages Setting.<br /><br />
+                        &nbsp;&nbsp;- Email Templates<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows you to change Email Templates (HTML).<br /><br />
+                        &nbsp;&nbsp;- Language Setting<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows you to change or add language and Edit Phrase.<br /><br />
+                        <li><strong>Users</strong><br /></li>
+                        Allows you to add certain Users and view profile and edit profile.<br /><br />
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="message-inner">
+					<h3 id="faq"><strong>4. FAQ</strong> - <a href="#top">top</a></h3>
+					<ol>
+						<li><strong>Q:</strong> I want to modify a text or something about the design...<br />
+						<strong>A:</strong> You can change anything visual from the theme located in: /themes/theme-name</li>
+						<li><strong>Q:</strong> I want to change the content of the contact , Privacy , about us page.<br />
+						<strong>A:</strong> Open admin goto Manage Pages.</li>
+						<li><strong>Q:</strong> I have problems/questions related to the script, how can I contact you?<br />
+						<strong>A:</strong> You can contact me via the contact form at <a href="http://codecanyon.net/user/themearabia#contact" target="_blank">http://codecanyon.net/user/themearabia#contact</a> or via e-mail at: themearabia@gmail.com
+					</ol>
+				</div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="message-inner">
+					Copyright &copy; 2015 <a href="http://codecanyon.net/user/themearabia" target="_blank">PHP Help Manager</a>. All rights reserved.<br />
+					A product by <a href="http://codecanyon.net/user/themearabia" target="_blank">themearabia</a>.
+				</div>
+				<span style="float: right; padding: 10px;"><a href="#toc">Go To Table of Contents</a></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1><i class="fa fa-tags"></i> 
+        <!-- IF QUERY eq 'update' -->
+        {LANG_CP_EDIT_CATEGORIE} {TAXONOMY}
+        <!-- ELSE -->
+        {PAGE_TITLE}  {TAXONOMY}
+        <!-- ENDIF -->
+    </h1>
+</div>
+<!-- IF ACTION_TOKEN -->
+<div class="alert alert-block alert-success">
+	<button type="button" class="close" data-dismiss="alert"><i class="fa fa-remove"></i></button>
+	<p><i class="fa fa-chevron-circle-down"></i> {ACTION_TOKEN}</p>
+</div>
+<!-- ENDIF -->
+<div class="row-fluid">
+    <!-- IF QUERY neq 'update' -->
+	<div class="span8">
+        <form action="{THIS_SCRIPT}?taxonomy={TAXONOMY}" method="post">
+        <input type="hidden" name="token" value="{TOKEN}">
+        <input type="hidden" name="query" value="action">
+        <table id="jq-table" class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th style="width: 15px;" class="center"><label><input type="checkbox" /><span class="lbl"></span></label></th>
+                    <th>{LANG_CP_NAME}</th>
+                    <th class="hidden-phone">{LANG_CP_DESCRIPTION}</th>
+                    <th class="hidden-phone">{LANG_CP_SLUG}</th>
+					<th style="width: 70px;text-align: center;" class="hidden-phone">{LANG_CP_COUNT}</th>
+                    <th style="width: 70px;text-align: center;" class="hidden-phone">{LANG_CP_ORDER}</th>
+				</tr>
+			</thead>
+            <tbody>
+            <!-- BEGIN admin_loop_categorie -->
+                <tr >
+					<td <!-- IF admin_loop_categorie.STATUS eq '0' -->style="border-left: 2px solid #D15B47 !important;"<!-- ENDIF -->><label><input type="checkbox" name="mark[]" value="{admin_loop_categorie.ID}" /><span class="lbl"></span></label></td>
+                    <td>
+                        <strong><a href="{THIS_SCRIPT}?taxonomy={TAXONOMY}&action=edit&id={admin_loop_categorie.ID}">{admin_loop_categorie.NAME}</a></strong>
+                        <div class="row-actions">
+                            <a href="{THIS_SCRIPT}?taxonomy={TAXONOMY}&action=edit&id={admin_loop_categorie.ID}">{LANG_CP_EDIT}</a> | 
+                            <!-- IF admin_loop_categorie.STATUS eq 1 -->
+                            <a href="{THIS_SCRIPT}?taxonomy={TAXONOMY}&action=activ&status=disable&id={admin_loop_categorie.ID}" class="green">{LANG_CP_DISABLE}</a> | 
+                            <!-- ELSE -->
+                            <a href="{THIS_SCRIPT}?taxonomy={TAXONOMY}&action=activ&status=enable&id={admin_loop_categorie.ID}" class="red">{LANG_CP_ENABLE}</a> | 
+                            <!-- ENDIF -->
+                            <a href="{THIS_SCRIPT}?taxonomy={TAXONOMY}&action=delete&id={admin_loop_categorie.ID}&token={TOKEN}" onclick="return confirm('{LANG_CP_CONFIRM_ACTION}');" class="red">{LANG_CP_DELETE}</a>
+                        </div>
+                    </td>
+                    <td class="hidden-phone">{admin_loop_categorie.DESCRIPTION}</td>
+                    <td class="hidden-phone">{admin_loop_categorie.SLUG}</td>
+					<td style="text-align: center;" class="hidden-phone">{admin_loop_categorie.NUMPOSTS}</td>
+                    <td style="text-align: center;" class="hidden-phone">
+                        <span style="display: none;">{admin_loop_categorie.ORDERS}</span>
+                        <input type="hidden" name="idx[]" value="{admin_loop_categorie.ID}" style="display:none;">
+                        <input type="text" name="order[]" class="inputorder" value="{admin_loop_categorie.ORDERS}" style="width:50px;text-align:center;padding:0 2px;line-height: 19px">
+                    </td>
+				</tr>
+            <!-- END admin_loop_categorie -->
+            </tbody>
+        </table>
+        </form>
+    </div>
+    <!-- ENDIF -->
+    <div <!-- IF QUERY eq 'update' -->class="span12"<!-- ELSE -->class="span4" style="background: #F2F2F2;padding: 0 20px;"<!-- ENDIF --> >
+        <h4 style="border-bottom: 1px solid #e5e5e5;padding: 5px 0;">
+        <!-- IF QUERY eq 'update' -->
+        {LANG_CP_EDIT_CATEGORIE} {NAME}
+        <!-- ELSE -->
+        {LANG_CP_ADD_NEW_CATEGORIE} {TAXONOMY}
+        <!-- ENDIF -->
+        </h4>
+        <form action="{THIS_SCRIPT}?taxonomy={TAXONOMY}" method="post" name="form" class=" checkbox_form">
+            <input type="hidden" name="query" value="{QUERY}" />
+            <input type="hidden" name="id" value="{ID}" />
+            <input type="hidden" name="oldname" value="{NAME}" />
+            <input type="hidden" name="type_terms" value="{TYPE_TERMS}" />
+            <div class="control-group">
+				<label class="control-label" for="form-field-name">{LANG_CP_NAME}</label>
+				<div class="controls">
+					<input type="text" id="form-field-name" name="name" placeholder="{LANG_CP_NAME}" value="{NAME}" class="span12" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-slug">{LANG_CP_SLUG}</label>
+				<div class="controls">
+					<input type="text" id="form-field-slug" name="slug" placeholder="{LANG_CP_SLUG}" value="{SLUG}" class="span12" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-parent">{LANG_CP_PARENT}</label>
+				<div class="controls">
+                    <select  class="span12" id="form-field-parent" name="parent">{PARENT}</select>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-description">{LANG_CP_DESCRIPTION}</label>
+				<div class="controls">
+                    <textarea class="span12" id="form-field-description" name="description" placeholder="{LANG_CP_DESCRIPTION}" rows="4">{DESCRIPTION}</textarea>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label span4" for="form-field-orders">{LANG_CP_ORDER}</label>
+				<div class="controls span8" >
+					<input type="text" id="form-field-orders" name="orders" value="{ORDERS}"  class="span6" style="text-align: center;" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label span4" for="form-field-status">{LANG_CP_STATUS}</label>
+				<div class="controls span8">
+					<label style="width: 60px;">
+						<input name="status" type="checkbox" <!-- IF STATUS -->checked=""<!-- ENDIF --> />
+					</label>
+				</div>
+			</div>
+            <div class="clear"></div>
+            <div class="form-actions center">
+				<button class="btn btn-small btn-success"><i class="fa fa-floppy-o"></i> <!-- IF QUERY eq 'update' -->{LANG_CP_UPDATE}<!-- ELSE -->{LANG_CP_ADD}<!-- ENDIF --></button>
+				&nbsp; 
+				<button class="btn btn-small btn-info" type="reset"><i class="fa fa-undo"></i> {LANG_CP_RESET}</button>
+                <!-- IF QUERY eq 'update' -->
+                &nbsp; <a class="btn btn-small btn-danger" href="{THIS_SCRIPT}?taxonomy={TAXONOMY}"><i class="fa fa-times"></i> {LANG_CP_CANCEL}</a>
+                <!-- ENDIF -->
+			</div>
+        </form>
+    </div>
+</div>    
+<script type="text/javascript">
+$(function() {
+	var oTable1 = $('#jq-table').dataTable( {"aoColumns": [{ "bSortable": false },null, null, null, null, null] } );
+	var actionselect = '<select name="action" class="select_actions" style="width: 150px;"><option value="-1">{LANG_CP_BULK_ACTIONS}</option><option value="orders">{LANG_CP_ORDER}</option><option value="activs">{LANG_CP_ENABLE}</option><option value="disactivs">{LANG_CP_DISABLE}</option><option value="delete">{LANG_CP_DELETE}</option></select><input type="submit" class="btn btn2 btn-primary" value="{LANG_CP_APPLY}" onclick="return confirm(\'{LANG_CP_CONFIRM_ACTION}\');"   />';
+    $('.actionselect').html(actionselect)
+});
+</script>                                              
+<!-- INCLUDE footer.html -->

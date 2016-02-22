@@ -1,0 +1,199 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1><i class="fa fa-dashboard"></i> {LANG_CP_DASHBOARD}</h1>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="center">
+            <ul class="stat-boxes2">
+              <li>
+                <div class="left peity_bar_color1"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>{DASH_COUNT_KNOWLEDGE_PER}%</div>
+                <div class="right"> <strong>{DASH_COUNT_KNOWLEDGE}</strong> {LANG_CP_KNOWLEDGE_BASE} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color2"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>{DASH_COUNT_NEWS_PER}%</div>
+                <div class="right"> <strong>{DASH_COUNT_NEWS}</strong> {LANG_CP_NEWS} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color3"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>{DASH_COUNT_FAQS_PER}%</div>
+                <div class="right"> <strong>{DASH_COUNT_FAQS}</strong> {LANG_CP_FAQ} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color4"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>100%</div>
+                <div class="right"> <strong>{DASH_COUNT_USERS}</strong> {LANG_CP_USERS} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color6"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>100%</div>
+                <div class="right"> <strong>{DASH_COUNT_VOTE}</strong> {LANG_CP_VOTING} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color8"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>{DASH_COUNT_VOTEUP_PER}%</div>
+                <div class="right"> <strong>{DASH_COUNT_VOTEUP}</strong> {LANG_CP_VOTING_UP} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color9"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>{DASH_COUNT_VOTEDOWN_PER}%</div>
+                <div class="right"> <strong>{DASH_COUNT_VOTEDOWN}</strong> {LANG_CP_VOTING_DOWN} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color5"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>100%</div>
+                <div class="right"> <strong>{DASH_COUNT_VISITS_YEAR}</strong> {LANG_CP_VISITS_THE_YEAR} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color5"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>{DASH_COUNT_VISITS_MONTH_PER}%</div>
+                <div class="right"> <strong>{DASH_COUNT_VISITS_MONTH}</strong> {LANG_CP_VISITS_THE_MONTH} </div>
+              </li>
+              <li>
+                <div class="left peity_bar_color5"><span><span style="display: none;">2,4,9,7,12,10,12</span>
+                  <canvas width="50" height="24"></canvas>
+                  </span>{DASH_COUNT_VISITS_DAY_PER}%</div>
+                <div class="right"> <strong>{DASH_COUNT_VISITS_DAY}</strong> {LANG_CP_VISITS_THE_DAY} </div>
+              </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span6 widget-container-span ui-sortable">
+		<div class="widget-box">
+			<div class="widget-header">
+				<h5><i class="fa fa-bar-chart"></i> {LANG_CP_POSTS_CHART}</h5>
+			</div>
+			<div class="widget-body">
+                <div class="widget-body-inner" style="display: block;">
+    				<div class="widget-main">
+                        <div class="chart-caption">{LANG_CP_STATISTICS} {STATISTICS_YEAR}</div> 
+						<table class="chart-barsmulti-posts" style="width : 100%;"> 
+							<thead> 
+								<tr> 
+									<th></th> 
+									<th style="color : #308EEF;">{LANG_CP_KNOWLEDGE} </th> 
+									<th style="color : #71A100;">{LANG_CP_NEWS}</th> 
+                                    <th style="color : #FF8000;">{LANG_CP_FAQ}</th> 
+								</tr> 
+							</thead> 
+							<tbody> 
+                                <!-- BEGIN posts_loop_counter -->
+                                <tr> 
+									<th>{posts_loop_counter.MONTH}</th><td>{posts_loop_counter.KNOWLEDGE}</td><td>{posts_loop_counter.NEWS}</td><td>{posts_loop_counter.FAQS}</td> 
+								</tr> 
+                                <!-- END posts_loop_counter -->
+							</tbody> 
+						</table>
+    				</div>
+    			</div>
+            </div>
+		</div>
+	</div>
+    <div class="span6 widget-container-span ui-sortable">
+		<div class="widget-box">
+			<div class="widget-header">
+				<h5><i class="fa fa-bar-chart"></i> {LANG_CP_VISITORS_CHART}</h5>
+			</div>
+			<div class="widget-body">
+                <div class="widget-body-inner" style="display: block;">
+    				<div class="widget-main">
+                        <div class="chart-caption">{LANG_CP_STATISTICS} {STATISTICS_YEAR}</div> 
+						<table class="chart-barsmulti-visitors" style="width : 100%;"> 
+							<thead> 
+								<tr> 
+									<th></th> 
+									<th style="color : #0099ca;">{LANG_CP_UNIQUE_VISITORS}</th> 
+									<th style="color : #73bc00;">{LANG_CP_PAGE_VIEWS}</th> 
+								</tr> 
+							</thead> 
+							<tbody>
+                                <!-- BEGIN visits_loop_counter -->
+                                <tr> 
+									<th>{visits_loop_counter.MONTH}</th><td>{visits_loop_counter.UNIQUE}</td><td>{visits_loop_counter.VIEWS}</td> 
+								</tr> 
+                                <!-- END visits_loop_counter -->
+							</tbody> 
+						</table>
+    				</div>
+    			</div>
+            </div>
+		</div>
+	</div>
+</div>
+<div class="clear_5"></div>
+<div class="clear_5"></div>
+<div class="clear_5"></div>
+<div class="row-fluid">
+    <div class="span6 widget-container-span ui-sortable">
+		<div class="widget-box">
+			<div class="widget-header">
+				<h5><i class="fa fa-bar-chart"></i> {LANG_CP_USERS_CHART}</h5>
+			</div>
+			<div class="widget-body">
+                <div class="widget-body-inner" style="display: block;">
+    				<div class="widget-main">
+                        <div class="chart-caption">{LANG_CP_STATISTICS} {STATISTICS_YEAR}</div> 
+						<table class="chart-barsmulti-users" style="width : 100%;"> 
+							<thead> 
+								<tr> 
+									<th></th> 
+									<th style="color : #0099ca;">{LANG_CP_USERS}</th> 
+								</tr> 
+							</thead> 
+							<tbody>
+                                <!-- BEGIN users_loop_counter -->
+								<tr> 
+									<th>{users_loop_counter.MONTH}</th><td>{users_loop_counter.USERS}</td>
+								</tr>
+                                <!-- END users_loop_counter -->
+							</tbody> 
+						</table>
+    				</div>
+    			</div>
+            </div>
+		</div>
+	</div>
+    <div class="span6 widget-container-span ui-sortable">
+		<div class="widget-box">
+			<div class="widget-header">
+				<h5><i class="fa fa-bar-chart"></i> {LANG_CP_VOTING_CHART}</h5>
+			</div>
+			<div class="widget-body">
+                <div class="widget-body-inner" style="display: block;">
+    				<div class="widget-main">
+                        <div class="chart-caption">{LANG_CP_STATISTICS} {STATISTICS_YEAR}</div> 
+						<table class="chart-barsmulti-voting" style="width : 100%;"> 
+							<thead> 
+								<tr> 
+									<th></th> 
+									<th style="color : #0099ca;">{LANG_CP_UP}</th> 
+									<th style="color : #CC1313;">{LANG_CP_DOWN}</th> 
+								</tr> 
+							</thead> 
+							<tbody>
+                                <!-- BEGIN vote_loop_counter -->
+                                <tr> 
+									<th>{vote_loop_counter.MONTH}</th><td>{vote_loop_counter.VOTEUP}</td><td>{vote_loop_counter.VOTEDOWN}</td> 
+								</tr>  
+                                <!-- END vote_loop_counter -->
+							</tbody> 
+						</table>
+    				</div>
+    			</div>
+            </div>
+		</div>
+	</div>
+</div>

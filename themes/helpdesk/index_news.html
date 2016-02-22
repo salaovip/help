@@ -1,0 +1,85 @@
+<!-- INCLUDE overall_header.html -->
+<div class="col-md-12 main-content">
+    <div class="row question-filter" id="question_filter">
+        <div class="col-md-12 current-category">
+            <span><i class="fa fa-lightbulb-o"></i> {LANG_NEWS}</span>
+        </div> 
+    </div>
+    <div class="col-md-2  main-content left-sidebar">
+        <div class="widget widget-statistic">
+        	<p class="questions-count">
+        		<span>{COUNT_POSTS}</span><br>
+                {LANG_NEWS}
+        	</p>
+        	<p class="members-count">
+        		<span>{COUNT_TERMS}</span><br>
+                {LANG_CATEGORIES}     		
+        	</p>
+        </div>
+        <div class="widget widget-menus">
+            <div class="menu-left-menu-container">
+                <ul id="menu-left-menu-1" class="menu">
+                    <li class="<!-- IF THIS_TERM_ID eq 0 -->active<!-- ENDIF -->"><a href="index.php?mode=news"><i class="fa fa-tags"></i> {LANG_ALL_NEWS}</a></li>
+                    <!-- BEGIN loop_terms -->
+                    <li class="<!-- IF loop_terms.TERM_ID eq THIS_TERM_ID -->active<!-- ENDIF -->">
+                        <a href="index.php?mode=news&term_id={loop_terms.TERM_ID}"><i class="fa fa-tag"></i> {loop_terms.TERM_NAME}</a>
+                    </li>
+                    <!-- END loop_terms -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10  main-content">
+        <div class="main-questions-list">
+        <!-- IF IS_NEWS_USERS_ONLY -->
+            <!-- INCLUDE msg_members_only.html -->
+        <!-- ELSE -->
+            <ul id="main_questions_list">
+                <!-- BEGIN loop_news -->
+                <li class="question type-question status-publish hentry question-item" data-id="{loop_news.POST_ID}">
+                    <div class="col-md-8 col-xs-8 q-left-content">
+                        <div class="q-ltop-content">
+                            <a href="index.php?post_id={loop_news.POST_ID}" class="question-title">{loop_news.POST_TITLE}</a>
+                        </div>
+                        <div class="q-lbtm-content">
+                            <div class="question-cat">
+                                <div class="clearfix"></div>                                  
+                                <span class="question-time">{loop_news.POST_TIME_AGO} {LANG_IN}</span>
+                                <span class="question-category">
+                                    <a href="index.php?mode=news&term_id={loop_news.POST_TERM_ID}">{loop_news.POST_TERM_NAME}</a>
+                                </span>
+                            </div>   
+                        </div>
+                        <div class="q-lbtm-content">
+                            <div class="question-cat">
+                                <div class="clearfix"></div>                
+                                <a href="users.php?username={loop_news.POST_AUTHOR}">
+                                    <span class="author-avatar"><img src="{loop_news.AUTHOR_AVATER}" class="avatar" alt="{loop_news.POST_AUTHOR}"></span>
+                                    <span class="author-name">{loop_news.POST_AUTHOR}</span>
+                                </a>                    
+                                <span title="{loop_news.AUTHOR_GROUP_NAME}" class="user-badge" style="background: {loop_news.AUTHOR_GROUP_COLOR};">{loop_news.AUTHOR_GROUP_NAME}</span>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4 q-right-content">
+                        <ul class="question-statistic">
+                            <li><span class="question-views">{loop_news.POST_VIEW}</span>{LANG_VIEWS}</li>
+                            <li class=""><span class="question-comments" style="color: <!-- IF loop_news.VOTE_COLOR -->#208ACA<!-- ELSE -->red<!-- ENDIF --> ;">{loop_news.POST_VOTE}</span> {LANG_VOTING}</li>
+                        </ul>
+                    </div>                   
+                </li>
+                <!-- END loop_news -->                                                               
+            </ul>
+            <!-- ENDIF -->
+        </div>
+        <!-- IF IS_NEWS_USERS_ONLY -->
+        <!-- ELSE -->
+            <!-- IF SHOW_PAGINATION -->
+                <ul class="pagination pagination-sm">
+                    {PAGINATION}
+                </ul>
+            <!-- ENDIF -->
+        <!-- ENDIF -->
+    </div>
+</div>
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="{SITE_DESCRIPTION}"/>
+    <meta name="keywords" content="{SITE_KEYWORDS}"/>
+    <!-- IF FAVICON -->
+    <link rel="shortcut icon" href="{FAVICON}"/>
+    <!-- ELSE -->
+    <link rel="icon" href="{T_TEMPLATE_PATH}/favicon.ico" />
+    <!-- ENDIF -->
+    <title>{SITE_NAME} - {PAGE_TITLE}</title>
+    <!-- Bootstrap -->
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700&subset=latin,cyrillic,cyrillic-ext,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="{T_TEMPLATE_PATH}/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{T_TEMPLATE_PATH}/assets/css/lavish-bootstrap.css" rel="stylesheet">
+    <link href="{T_TEMPLATE_PATH}/assets/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="{T_TEMPLATE_PATH}/assets/css/style.css" rel="stylesheet">
+    <link href="{T_TEMPLATE_PATH}/assets/css/font_icon/flaticon.css" rel="stylesheet" />
+    <link href="{T_TEMPLATE_PATH}/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{T_TEMPLATE_PATH}/assets/css/jquery.Jcrop.min.css" rel="stylesheet" />
+    <!-- IF IS_PROFILE --><link href="{T_TEMPLATE_PATH}/assets/css/profile.css" rel="stylesheet"><!-- ENDIF -->
+    <!-- IF IS_EDIT_PROFILE --><link href="{T_TEMPLATE_PATH}/assets/css/profile-editor.css" rel="stylesheet"><!-- ENDIF -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery-ui-1.10.2.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/autosize-textarea.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery.dotdotdot.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery.browser.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery.uniform.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/jquery.form.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/tooltip.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/global.js"></script>
+    <script type="text/javascript" src="{T_TEMPLATE_PATH}/assets/js/vote.js"></script>
+    <!-- IF OPTION_COVER_BACKGROUND_HEADER -->
+    <style type="text/css">
+    #support-header.index {
+        background-image: url("{OPTION_COVER_BACKGROUND_HEADER}");background-position: center 50%;background-size: cover;
+    }
+    </style>
+    <!-- ENDIF -->
+</head>
+<body>
+<div id="loading-bar" style="width: 0px; display: none;"><dd></dd><dt></dt></div>
+<!-- IF USER_STATUS eq '0' and IS_USER -->
+<div class="top_notes">{LANG_PLEASE_ACTIVATE_YOUR_ACCOUNT}</div>
+<!-- ENDIF -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="row">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">{LANG_TOGGLE_NAVIGATION}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <!-- IF IS_USER -->
+    <ul class="nav navbar-nav navbar-left phone">
+    <li class="nav-item nav-user-toggle">
+        <a href="users.php?mode=profile">
+            <img class="avatar-image avatar-30" src="{USER_IMG30}"> 
+            <i class="fa fa-angle-down"></i> 
+        </a>
+        <ul class="nav-user-menu ballon-sm-top-left">
+            <li><a href="users.php?mode=profile"><i class="fa fa-user"></i> {USER_FNAME} {USER_LNAME}</a></li>
+            <li><a href="users.php?mode=editprofile"><i class="fa fa-cog"></i> {LANG_EDIT_PROFILE}</a></li>
+            <li class="break"></li>
+            <li><a href="users.php?mode=logout" onclick="return confirm('{LANG_DOYOU_LOGOUT}');"><i class="fa fa-power-off"></i> {LANG_LOGOUT}</a></li>
+        </ul>
+    </li>
+    </ul>
+    <!-- ELSE -->
+    <ul class="nav navbar-nav navbar-left phone register-login">
+    <li><a href="users.php?mode=register"><i class="fa fa-user-plus"></i> {LANG_REGISTER}</a></li>
+    <li><a href="users.php?mode=login"><i class="fa fa-sign-in"></i> {LANG_LOGIN}</a></li>
+    </ul>
+    <!-- ENDIF -->
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav ">
+        <li class="<!-- IF IS_CRR_HOME -->active<!-- ENDIF -->"><a href="index.php"><i class="fa fa-home"></i> {LANG_HOME}</a></li>
+        <li class="<!-- IF IS_CRR_KNOW -->active<!-- ENDIF -->"><a href="index.php?mode=knowledgebase"><i class="fa fa-file-text-o"></i> {LANG_KNOWLEDGE_BASE}</a></li>
+        <li class="<!-- IF IS_CRR_NEWS -->active<!-- ENDIF -->"><a href="index.php?mode=news"><i class="fa fa-bullhorn"></i> {LANG_NEWS}</a></li>
+        <li class="<!-- IF IS_CRR_FAQ -->active<!-- ENDIF -->"><a href="index.php?mode=faq"><i class="fa fa-life-ring"></i> {LANG_FAQ}</a></li>
+        <!-- IF SHOW_PAGE_USERS -->
+        <li class="<!-- IF IS_CRR_USER -->active<!-- ENDIF -->"><a href="users.php"><i class="fa fa-user"></i> {LANG_USERS}</a></li>
+        <!-- ENDIF -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right ">
+        <!-- IF IS_USER -->
+        <li class="nav-item nav-user-toggle">
+            <a href="users.php?mode=profile">
+                <img class="avatar-30" src="{USER_IMG30}"> 
+                <i class="fa fa-angle-down"></i> 
+            </a>
+            <ul class="nav-user-menu ballon-sm-top-left">
+                <li><a href="users.php?mode=profile"><i class="fa fa-user"></i> {USER_FNAME} {USER_LNAME}</a></li>
+                <li><a href="users.php?mode=editprofile"><i class="fa fa-cog"></i> {LANG_EDIT_PROFILE}</a></li>
+                <li class="break"></li>
+                <li><a href="users.php?mode=logout" onclick="return confirm('Do you want to log out?');"><i class="fa fa-power-off"></i> {LANG_LOGOUT}</a></li>
+            </ul>
+        </li>
+        <!-- ELSE -->
+        <li><a href="users.php?mode=register"><i class="fa fa-user-plus"></i> {LANG_REGISTER}</a></li>
+        <li><a href="users.php?mode=login"><i class="fa fa-sign-in"></i> {LANG_LOGIN}</a></li>
+        <!-- ENDIF -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    </div>
+  </div>
+</nav>
+<!-- IF IS_CRR_HOME -->
+<div id="support-header" class="index">
+  <div class="container">
+    <h1 style="color: {OPTION_TITLE_HEADER_COLOR}!important;"><!-- IF OPTION_TITLE_HEADER -->{OPTION_TITLE_HEADER}<!-- ELSE -->{SITE_NAME}<!-- ENDIF --><br />
+    <span style="color: {OPTION_TAGLINE_HEADER_COLOR}!important;"><!-- IF OPTION_TAGLINE_HEADER -->{OPTION_TAGLINE_HEADER}<!-- ELSE -->{SITE_TAGLINE}<!-- ENDIF --></span></h1>
+    <!-- IF OPTION_SEARCH_SHOW_HEADER -->
+    <div id="search-form">
+      <form action="index.php" method="get" id="support-search" class="support-search-big">
+        <div class="inner">
+          <input type="text" id="q" name="search" maxlength="100" value="" placeholder="{OPTION_SEARCH_PLACEHOLDER_HEADER}" class="ui-autocomplete-input" role="textbox">
+          <input type="submit" id="support-search-submit" value="{LANG_SEARCH}">
+        </div>
+      </form>
+    </div>
+    <!-- ENDIF -->
+  </div>
+</div>
+<!-- ELSE -->
+<div id="support-header">
+<div class="container">
+    <div class="logo">
+        <a href="index.php">{SITE_NAME}</a>
+    </div>
+    <!-- IF OPTION_SEARCH_SHOW_HEADER -->
+    <form action="index.php" method="get" id="support-search" class="support-search-small">
+      <div>
+        <input id="q" maxlength="100" name="search" type="text" value="" placeholder="{OPTION_SEARCH_PLACEHOLDER_HEADER}" class="ui-autocomplete-input" role="textbox">
+        <input id="support-search-submit" type="submit" value="{LANG_SEARCH}">
+      </div>
+    </form>
+    <!-- ENDIF -->
+    <div class="clearfix"></div>
+    <div id="breadcrumbs">
+        <span class="crumb"><a href="index.php">{LANG_HOME}</a></span>
+        <!-- IF CRUMB_NEWS -->
+        / <span class="crumb"><a href="index.php?mode=news">{LANG_NEWS}</a></span>
+        <!-- ELSEIF CRUMB_KNOW -->
+        / <span class="crumb"><a href="index.php?mode=knowledgebase">{LANG_KNOWLEDGE_BASE}</a></span>
+        <!-- ENDIF -->
+        / <span class="crumb"><a href="#">{PAGE_TITLE}</a></span> 
+      </div>
+  </div>
+</div>
+<!-- ENDIF -->
+<div class="container">
+<div class="row">
+<div id="tab-container">

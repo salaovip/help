@@ -1,0 +1,47 @@
+<!-- INCLUDE header.html -->
+<div class="container">
+<!-- INCLUDE state_overview.html -->
+    <div class="row">   
+        <div class="col-md-3">
+            <div class="jumbotron sidebar_info">
+                <i class="fa fa-life-ring"></i>
+                <br />
+                {TOTAL_FAQ} FAQ
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- IF NOTFOUND -->
+                <div class="panel-group" id="accordion">
+                    <!-- BEGIN loop_faq -->	
+                    <div class="panel panel-default">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{loop_faq.ID}">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><i class="fa fa-life-ring"></i> {loop_faq.TITLE}</h4>
+                            </div>
+                        </a>
+                        <div id="collapse{loop_faq.ID}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="pull-left">
+                                    <div class="voting_wrapper" id="{loop_faq.ID}">
+                                        <div class="voting_btn">
+                                            <div class="up_button">&nbsp;</div><span class="up_votes">0</span>
+                                        </div>
+                                        <div class="voting_btn">
+                                            <div class="down_button">&nbsp;</div><span class="down_votes">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear10"></div>
+                                <p>{loop_faq.CONTENT}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END loop_faq -->
+                </div>
+            <!-- ELSE -->
+                <!-- INCLUDE index_notfound.html -->
+            <!-- ENDIF -->
+        </div>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

@@ -1,0 +1,350 @@
+<!-- INCLUDE overall_header.html -->
+    <div class="popup crop-popup profile-avatar-crop hidden">
+        <div class="popup-wrap">
+            <h4 class="popup-title">{LANG_CROP_AVATAR}</h4>
+            <div class="popup-content">
+                <div class="process-warp hidden">
+                    <span class="process-text micon-inline-loading">{LANG_PROCESSING}</span>	 
+                </div>
+            </div>
+            <div class="popup-action-buttons">
+                <a class="form-button form-button-red micon-inline-accept" href="#">{LANG_ACCEPT}</a>
+                <a class="form-button form-button-default micon-inline-cancel" href="#">{LANG_CENCEL}</a>    
+            </div>
+        </div>
+    </div>
+    <div class="popup crop-popup profile-cover-crop hidden">
+    	<div class="popup-wrap">
+            <h4 class="popup-title">{LANG_CROP_COVER}</h4>
+            <div class="popup-content">
+                <div class="process-warp hidden">
+                    <span class="process-text micon-inline-loading">{LANG_PROCESSING}</span>	 
+                </div>
+            </div>
+            <div class="popup-action-buttons">
+                <a class="form-button form-button-red micon-inline-accept" href="#">{LANG_ACCEPT}</a>
+                <a class="form-button form-button-default micon-inline-cancel" href="#">{LANG_CENCEL}</a>    
+            </div>
+        </div>
+    </div>
+<div class="col-md-12 main-content margintb ">
+    <form enctype="multipart/form-data" action="ajax.php?do=editprofile" method="post" id="profileform" class="block">
+      <div class="section-column section-column-left">
+        <div class="section-wrap basicinfo-form default-box">
+          <div class="section-head">
+            <h3 class="section-title"><i class="fa fa-user"></i> {LANG_PUBLIC_INFORMATION}</h3>
+          </div>
+          <div class="section-content">
+            <div class="section-item c-fix">
+              <div class="inline-item avatar-uploader">
+                    <div id="currentavatar" class="avatar-image-wrap profile-thumb-warp">
+                        <div class="upb-loading hidden">
+                            <span class="process-text micon-inline-loading"></span>
+                        </div>
+                        <div class="process-warp hidden">
+                            <span class="process-text micon-inline-loading"></span>     
+                        </div>
+                        <img class="avatar-image avatar-80" src="{IN_USER_IMG80}" />                        
+                    </div>
+                    <span class="upload-avatar-button form-button form-button-default"><i class="fa fa-cloud-upload"></i> {LANG_CHANGE_AVATAR}</span>
+                    <div class="avatarerror form-messeges error light closable hidden">
+                        <div class="messege-warp">
+                            <span class="messege-text"></span>
+                        </div>
+                    </div>
+                    <input type="file" id="avatarupload" class="avatarupload hidden" name="avatarimage"/>
+              </div>
+              <div class="inline-item cover-uploader">
+                <div class="cover-image-preview cover-image-wrap profile-thumb-warp">
+                    <div class="upb-loading hidden">
+                       <span class="process-text micon-inline-loading"></span>
+                    </div>
+                    <div class="process-warp hidden">
+                        <span class="process-text micon-inline-loading"></span>     
+                    </div>
+                   <img width="50" height="238" src="{IN_USER_COVER}" class="attachment-thumbnail profile-cover" alt=""/>                    
+                </div>
+                <span class="upload-cover-button form-button form-button-default"><i class="fa fa-cloud-upload"></i> {LANG_CHANGE_COVER}</span>
+                <div class="covererror form-messeges error light closable hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text"></span>
+                    </div>
+                </div>
+                <input type="file" id="coverupload" class="coverupload hidden" name="coverimage"/>
+              </div>
+              <div id="tempstatus" class="hidden"></div>
+            </div>
+            <input type="hidden" size="4" id="cropx" name="cropx"/>
+            <input type="hidden" size="4" id="cropy" name="cropy"/>
+            <input type="hidden" size="4" id="cropx2" name="cropx2"/>
+            <input type="hidden" size="4" id="cropy2" name="cropy2"/>
+            <input type="hidden" size="4" id="cropw" name="cropw"/>
+            <input type="hidden" size="4" id="croph" name="croph"/>
+            <input type="hidden" size="4" id="cropavatar" name="cropavatar" value="0"/>
+            <input type="hidden" size="4" id="cropcover" name="cropcover" value="0"/>
+            <input type="hidden" size="4" id="uploadtype" name="uploadtype" value="0"/>
+            <div class="section-item c-fix">
+              <div class="inline-item">
+                <input type="text" id="first-name" name="firstname" class="form-textbox autosave" placeholder="First name" maxlength="12" value="{IN_USER_FNAME}" />
+                <div class="firstnamemsg form-messeges error glass hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text">{LANG_FIRST_NAME_IS_REQUIRED}</span>
+                    </div>
+                </div>
+              </div>
+              <div class="inline-item">
+                <input type="text" id="last-name" name="lastname" class="form-textbox autosave" placeholder="Last name" maxlength="12" value="{IN_USER_LNAME}" />
+                <div class="lastnamemsg form-messeges error glass hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text">{LANG_LAST_NAME_IS_REQUIRED}</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="section-item c-fix">
+                <div class="inline-item">
+                    <input type="text" id="location" name="location" class="form-textbox autosave" placeholder="{LANG_LOCATION}" maxlength="40" value="{IN_USER_LOCATION}" />
+                </div>
+                <div class="inline-item">
+                    <input type="text" id="website" name="website" class="form-textbox autosave" placeholder="{LANG_WEBSITE}" maxlength="30" value="{IN_USER_WEBSITE}" />
+                </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-column section-column-right">
+      <div class="section-wrap social-form default-box">
+          <div class="section-head">
+            <h3 class="section-title"><i class="fa fa-share-alt"></i> {LANG_SOCIALS}</h3>
+          </div>
+          <div class="section-content"> 
+            <ul class="section-item reference-holder social-reference-holder c-fix ">       
+              <li class="twitter c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>Twitter</h6>
+                    <span class="di-title-right"><i class="fa fa-twitter"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="twitter" id="twitter" value="{IN_USER_TWITTER}" maxlength="30" placeholder="Twitter Id"/>
+                    <span class="di-title-right"><i class="fa fa-twitter"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+              <li class="facebook c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>Facebook</h6>
+                    <span class="di-title-right"><i class="fa fa-facebook"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="facebook" id="facebook" value="{IN_USER_FACEBOOK}" maxlength="100" placeholder="Facebook Id"/>
+                    <span class="di-title-right"><i class="fa fa-facebook"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+              <li class="google c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>Google+</h6>
+                    <span class="di-title-right"><i class="fa fa-google-plus"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="google" id="google" value="{IN_USER_GOOGLE}" maxlength="100" placeholder="Google+ Id"/>
+                    <span class="di-title-right"><i class="fa fa-google-plus"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+              <li class="youtube c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>YouTube</h6>
+                    <span class="di-title-right"><i class="fa fa-youtube"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="youtube" id="youtube" value="{IN_USER_YOUTUBE}" maxlength="100" placeholder="YouTube Id"/>
+                    <span class="di-title-right"><i class="fa fa-youtube"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+              <li class="vimeo c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>Vimeo</h6>
+                    <span class="di-title-right"><i class="fa fa-vimeo"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="vimeo" id="vimeo" value="{IN_USER_VIMEO}" maxlength="30" placeholder="Vimeo Id"/>
+                    <span class="di-title-right"><i class="fa fa-vimeo"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+              <li class="flickr c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>Flickr</h6>
+                    <span class="di-title-right"><i class="fa fa-flickr"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="flickr" id="flickr" value="{IN_USER_FILCKR}" maxlength="30" placeholder="Flickr Id"/>
+                    <span class="di-title-right"><i class="fa fa-flickr"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+              <li class="dribbble c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>Dribbble</h6>
+                    <span class="di-title-right"><i class="fa fa-dribbble"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="dribbble" id="dribbble" value="{IN_USER_DRIBBBLE}" maxlength="30" placeholder="Dribbble Id"/>
+                    <span class="di-title-right"><i class="fa fa-dribbble"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+              <li class="pinterest c-fix">
+                <div class="reference-item social-input">
+                  <div class="social-add-label form-textbox micon-inline">
+                    <h6>Pinterest</h6>
+                    <span class="di-title-right"><i class="fa fa-pinterest"></i></span>
+                  </div>
+                  <div class="dual-input-warp">
+                    <input type="text" class="form-textbox autosave" name="pinterest" id="pinterest" value="{IN_USER_PINTEREST}" maxlength="30" placeholder="Pinterest Id"/>
+                    <span class="di-title-right"><i class="fa fa-pinterest"></i></span>
+                    <span class="rh-delete"><i class="fa fa-times"></i></span>
+                  </div>
+                </div>                       
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <input name="action" type="hidden" id="action" value="updateuser" />
+</form>
+<div class="clearfix"></div>
+    <div class="section-column section-column-left">
+        <div class="section-wrap email-form default-box">
+            <form action="ajax.php?do=updateemail" method="post">  
+                <div class="section-head">
+                    <h3 class="section-title"><i class="fa fa-envelope-o"></i> {LANG_EMAIL_ADDRESS}</h3>
+                </div>
+                <div class="section-content">
+                    <div class="section-item c-fix">
+                        <div class="inline-item">
+                            <input type="text" name="email1" class="form-textbox email1" placeholder="{LANG_ENTER_THE_NEW_EMAIL_ADDRESS}"/>
+                        </div>
+                        <div class="inline-item">
+                            <input type="text" name="email2" class="form-textbox email2" placeholder="{LANG_RE_ENTER_THE_NEW_EMAIL_ADDRESS}"/>
+                        </div>
+                    </div>                 
+                    <div class="section-item hidden">
+                        <input type="hidden" name="emailform" value="1"/>
+                    </div>
+                    <div class="section-item section-item-current current-email">
+                        <label>{LANG_YOUR_CURRENT_EMAIL_ADDRESS}</label>
+                        <span>{USER_EMAIL}</span>
+                    </div>
+                    <div class="status hidden"></div>
+                    <div class="form-messeges error light hidden" id="form-messeges2">
+                        <div class="messege-warp">
+                            <span class="messege-text"></span>
+                        </div>
+                    </div>
+                    <div class="section-actionbts">
+                        <a class="section-btn form-button form-button-red">{LANG_CHANGE_EMAIL_ADDRESS}</a>
+                    </div>
+                </div>
+                <input name="action" type="hidden" id="action" value="update-user"/>
+            </form>
+        </div>
+    </div>
+    <div class="section-column section-column-right">
+        <div class="section-wrap password-form default-box">
+            <form action="ajax.php?do=updatepassword" method="post">  
+                <div class="section-head">
+                    <h3 class="section-title"><i class="fa fa-key"></i> {LANG_PASSWORD}</h3>
+                </div>
+                <div class="section-content">
+                    <div class="section-item c-fix">
+                        <div class="inline-item">
+                            <input type="password" name="pass1" class="form-textbox pass1" placeholder="{LANG_ENTER_THE_NEW_PASSWORD}"/>
+                        </div>
+                        <div class="inline-item">
+                            <input type="password" name="pass2" class="form-textbox pass2" placeholder="{LANG_RE_ENTER_THE_NEW_PASSWORD}"/>
+                        </div>
+                    </div>
+                    <div class="status hidden"></div>
+                    <div class="form-messeges error light hidden" id="form-messeges1">
+                        <div class="messege-warp">
+                            <span class="messege-text"></span>
+                        </div>
+                    </div>
+                    <div class="section-item hidden">
+                        <input type="hidden" name="passwordform" value="1" />
+                    </div>
+                    <div class="section-actionbts">
+                        <a class="section-btn form-button form-button-red">{LANG_CHANGE_PASSWORD}</a>
+                    </div>
+                </div>	
+                <input name="action" type="hidden" id="action" value="updateuser" />
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" defer="defer" src="{T_TEMPLATE_PATH}/assets/js/edit_profile.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$('.form-button-red').on('click',function() {
+	   
+	  $(this).addClass('form-button-loading');
+	  var formmsg = $(this).closest('.section-content').children('.form-messeges');
+	  var status =  $(this).closest('.section-content').children('.status');
+	  formmsg.addClass('activmsg hidden');
+	  $(this).closest('form').ajaxForm({    
+		success: function(xhr) { 
+		  $('.form-button-loading').removeClass('form-button-loading');    
+		},
+		complete: function(xhr) {
+		  status.html($(xhr.responseText));
+		 var errormsg = status.children('.error').text();
+		 var donemsg = status.children('.done').text();
+		  var haverror = status.children('.error').size();
+		  var done = status.children('.done').size();
+		  var redirect = status.children('.redirect').size();
+		  if(haverror){
+			$('.activmsg .messege-text').text(errormsg);
+			$('.activmsg').removeClass('hidden done').addClass('error');
+		  }
+		  if(done){
+			$('.activmsg .messege-text').text(donemsg);
+			$('.activmsg').removeClass('hidden error').addClass('done');
+			if(redirect){
+			  window.location.replace("users.php?mode=login");
+			}
+		  }
+		  var newemail = $('.newemail').text();
+		  if(newemail){
+		      $('.current-email span').text(newemail);
+		  }
+		  var newslug = $('.newslug').html();
+		  if(newslug){
+		  $('.current-link span').html(newslug);
+		  }
+		  $('.activmsg').removeClass('activmsg');
+		}
+	  });
+	  $(this).closest('form').submit();
+	});
+});
+</script>
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,61 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1><i class="fa fa-share-alt"></i> {PAGE_TITLE}</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <!-- IF ADMIN_SAVE -->
+        <div class="alert alert-block alert-success">
+			<button type="button" class="close" data-dismiss="alert"><i class="fa fa-remove"></i></button>
+			<p><i class="fa fa-chevron-circle-down"></i> {LANG_CP_SAVED_SUCCESSFULLY}</p>
+		</div>
+        <!-- ENDIF -->
+        <form action="settings.php?mode=socials" method="post" name="form" class="form-horizontal form-socials checkbox_form">
+            <input type="hidden" name="query" value="savesetting" />
+            <div class="control-group">
+				<label class="control-label" for="form-field-facebook">{LANG_CP_FACEBOOK}</label>
+				<div class="controls">
+                    <i class="fa fa-facebook bigger-120"></i>
+                    <input type="text" id="form-field-facebook" name="facebook" placeholder="{LANG_CP_FACEBOOK_URL}" value="{ADMIN_FACEBOOK}" class="span5" dir="ltr" /> 
+                    <label class="checkbox"><input name="facebook_status" type="checkbox" <!-- IF ADMIN_STATUS_FACEBOOK -->checked=""<!-- ENDIF --> /></label>
+                </div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-twitter">{LANG_CP_TWITTER}</label>
+				<div class="controls">
+                    <i class="fa fa-twitter bigger-120"></i>
+                    <input type="text" id="form-field-twitter" name="twitter" placeholder="{LANG_CP_TWITTER_URL}" value="{ADMIN_TWITTER}" class="span5" dir="ltr" />
+                    <label class="checkbox"><input name="twitter_status" type="checkbox" <!-- IF ADMIN_STATUS_TWITTER -->checked=""<!-- ENDIF --> /></label>
+                </div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-google">{LANG_CP_GOOGLE}</label>
+				<div class="controls">
+                    <i class="fa fa-google-plus bigger-120"></i>
+                    <input type="text" id="form-field-google" name="googleplus" placeholder="{LANG_CP_GOOGLE_URL}" value="{ADMIN_GOOGLE}" class="span5" dir="ltr" />
+                    <label class="checkbox"><input name="google_status" type="checkbox" <!-- IF ADMIN_STATUS_GOOGLE -->checked=""<!-- ENDIF --> /></label>
+                </div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-youtube">{LANG_CP_YOUTUBE}</label>
+				<div class="controls">
+                    <i class="fa fa-youtube bigger-120"></i>
+                    <input type="text" id="form-field-youtube" name="youtube" placeholder="{LANG_CP_YOUTUBE_URL}" value="{ADMIN_YOUTUBE}" class="span5" dir="ltr" />
+                    <label class="checkbox"><input name="youtube_status" type="checkbox" <!-- IF ADMIN_STATUS_YOUTUBE -->checked=""<!-- ENDIF --> /></label>
+                </div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-instagram">{LANG_CP_INSTAGRAM}</label>
+				<div class="controls">
+                    <i class="fa fa-instagram bigger-120"></i>
+                    <input type="text" id="form-field-instagram" name="instagram" placeholder="{LANG_CP_INSTAGRAM_URL}" value="{ADMIN_INSTAGRAM}" class="span5" dir="ltr" />
+                    <label class="checkbox"><input name="instagram_status" type="checkbox" <!-- IF ADMIN_STATUS_INSTAGRAM -->checked=""<!-- ENDIF --> /></label>
+                </div>
+			</div>
+            <div class="form-actions">
+				<button class="btn btn-small btn-success"><i class="fa fa-save"></i> {LANG_CP_SAVE_CHANGES}</button>
+			</div>
+        </form>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

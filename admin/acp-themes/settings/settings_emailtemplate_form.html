@@ -1,0 +1,50 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1><i class="fa fa-envelope-o"></i> {PAGE_TITLE} &nbsp;&nbsp;
+    <a href="settings.php?mode=emailtemplate" class="btn btn-mini btn-success"><i class="fa fa-angle-left"></i> {LANG_CP_BACK}</a>
+    </h1>
+</div>    
+<form action="settings.php?mode=emailtemplate" method="post" name="form" class="checkbox_form">
+<input type="hidden" name="query" value="update" />
+<input type="hidden" name="template" value="{TEMPLATE}" />
+    <div class="row-fluid">
+    	<div class="span8">
+            <div class="control-group">
+				<div class="controls">
+                    <textarea class="wp-editor-area" style="height: 400px;width: 100%" autocomplete="off" cols="40" name="content" id="content">{CONTENT}</textarea>
+				</div>
+			</div>
+        </div>
+        <div class="span4">
+            <div class="widget-box">
+				<div class="widget-header">
+					<h5 class="smaller">Var</h5>
+				</div>
+				<div class="widget-body">
+					<div class="widget-main padding-6">
+                        <div class="clear"></div>
+<pre>{$sitename}     => Site Name
+{$siteurl}      => Site URL
+{$sitemail}     => Site Email
+{$time}         => {THE_TIME}
+{$year}         => {THE_YEAR}
+{$username}     => contact username
+{$subject}      => contact subject
+{$email}        => contact email
+{$message}      => contact message
+{$firstname}    => First Name
+{$lastname}     => Last Name
+{$keyforget}    => Activation Key
+</pre>
+                        <div class="clear"></div>
+                        <div class="widget-actions">
+            				<button class="btn btn-small btn-success"><i class="fa fa-save"></i> {LANG_CP_SAVE_CHANGES}</button>
+            			</div>              
+					</div>
+				</div>
+			</div>
+            <div class="clear_20"></div>
+        </div>
+    </div>
+</form>
+<!-- INCLUDE footer.html -->

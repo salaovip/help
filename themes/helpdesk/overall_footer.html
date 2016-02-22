@@ -1,0 +1,67 @@
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<footer class="footer">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-sm-4">
+                <h2>{LANG_POPULAR_KNOWLEDGEBASE}</h2>
+                <ul>
+                    <!-- BEGIN loop_popularknow -->
+                    <li><a href="index.php?post_id={loop_popularknow.POST_ID}">{loop_popularknow.POST_TITLE}</a></li>
+                    <!-- END loop_popularknow -->
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>{LANG_POPULAR_NEWS}</h2>
+                <ul>
+                    <!-- BEGIN loop_popularnews -->
+                    <li><a href="index.php?post_id={loop_popularnews.POST_ID}">{loop_popularnews.POST_TITLE}</a></li>
+                    <!-- END loop_popularnews -->
+                </ul>
+            </div>
+            <div class="col-sm-4 center">
+                <!-- IF IS_USER -->
+                <br /><br />
+                <!-- ELSE -->
+                <h3>{LANG_SIGN_UP_FOR_YOUR_FREE}</h3>
+                <a href="users.php?mode=register" class="section-btn form-button form-button-green">{LANG_JOIN_NEW}</a>
+                <!-- ENDIF -->
+                <ul class="social-icons">
+                <!-- IF GET_STATUS_FACEBOOK -->
+                    <li><a href="{GET_URL_FACEBOOK}" class="ttip" data-toggle="tooltip" target="_blank" title="Facebook"><img src="{T_TEMPLATE_PATH}/assets/images/facebook.png" alt="" /></a></li>
+                <!-- ENDIF -->
+                <!-- IF GET_STATUS_TWITTER -->
+                    <li><a href="{GET_URL_TWITTER}" class="ttip" data-toggle="tooltip" target="_blank" title="twitter"><img src="{T_TEMPLATE_PATH}/assets/images/twitter.png" alt="" /></a></li>
+                <!-- ENDIF -->
+                <!-- IF GET_STATUS_YOUTUBE -->
+                    <li><a href="{GET_URL_YOUTUBE}" class="ttip" data-toggle="tooltip" target="_blank" title="youtube"><img src="{T_TEMPLATE_PATH}/assets/images/youtube.png" alt="" /></a></li>
+                <!-- ENDIF -->
+                <!-- IF GET_STATUS_GOOGLE -->
+                    <li><a href="{GET_URL_GOOGLE}" class="ttip" data-toggle="tooltip" target="_blank" title="google+"><img src="{T_TEMPLATE_PATH}/assets/images/google.png" alt="" /></a></li>
+                <!-- ENDIF -->
+                <!-- IF GET_STATUS_INSTAGRAM -->
+                    <li><a href="{GET_URL_INSTAGRAM}" class="ttip" data-toggle="tooltip" target="_blank" title="instagram"><img src="{T_TEMPLATE_PATH}/assets/images/instagram.png" alt="" /></a></li>
+                <!-- ENDIF -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="footer-bottom">
+    <div class="container">
+        <div class="row">
+        	<div class="col-sm-8 copyright">{COPYRIGHT}</div>
+            <div class="col-sm-4">
+                <ul>
+                    <li><a href="index.php?page=about">{LANG_ABOUT_US}</a></li>
+                    <li><a href="index.php?page=contact">{LANG_CONTACT}</a></li>
+                    <li><a href="index.php?page=privacy">{LANG_PRIVACY}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+</footer>
+</body>
+</html>

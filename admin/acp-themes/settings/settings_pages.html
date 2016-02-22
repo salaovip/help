@@ -1,0 +1,88 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1><i class="fa fa-file-text-o"></i> {PAGE_TITLE}</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <!-- IF ADMIN_SAVE -->
+        <div class="alert alert-block alert-success">
+			<button type="button" class="close" data-dismiss="alert"><i class="fa fa-remove"></i></button>
+			<p><i class="fa fa-chevron-circle-down"></i> {LANG_CP_SAVED_SUCCESSFULLY}</p>
+		</div>
+        <!-- ENDIF -->
+        <form action="settings.php?mode=pages" method="post" name="form" class="form-horizontal checkbox_form">
+            <input type="hidden" name="query" value="savesetting" />
+            <div class="control-group">
+				<label class="control-label control-label2" for="pageabout">{LANG_CP_PAGE_ABOUT}</label>
+				<div class="controls controls2">
+                    <select id="pageabout" name="pageabout" class="span5">{ADMIN_OPTIONS_PAGE_ABOUT}</select>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label control-label2" for="pageprivacy">{LANG_CP_PAGE_PRIVACY}</label>
+				<div class="controls controls2">
+                    <select id="pageprivacy" name="pageprivacy" class="span5">{ADMIN_OPTIONS_PAGE_PRIVACY}</select>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label control-label2" for="pagecontact">{LANG_CP_PAGE_CONTACT}</label>
+				<div class="controls controls2">
+                    <select id="pagecontact" name="pagecontact" class="span5">{ADMIN_OPTIONS_PAGE_CONTACT}</select>
+				</div>
+			</div>
+            
+            
+            <div class="control-group">
+				<label class="control-label control-label2" for="pageknowledgebase">{LANG_CP_KNOWLEDGE_BASE}</label>
+				<div class="controls controls2">
+                    <select id="pageknowledgebase" name="pageknowledgebase" class="span5">
+                        <option value="everyone" <!-- IF ADMIN_PAGE_KNOW eq 'everyone' -->selected="selected"<!-- ENDIF -->>{LANG_CP_EVERYONE}</option>
+                        <option value="useronly" <!-- IF ADMIN_PAGE_KNOW eq 'useronly' -->selected="selected"<!-- ENDIF -->>{LANG_CP_USER_ONLY}</option>
+                    </select>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label control-label2" for="pagenews">{LANG_CP_NEWS}</label>
+				<div class="controls controls2">
+                    <select id="pagenews" name="pagenews" class="span5">
+                        <option value="everyone" <!-- IF ADMIN_PAGE_NEWS eq 'everyone' -->selected="selected"<!-- ENDIF -->>{LANG_CP_EVERYONE}</option>
+                        <option value="useronly" <!-- IF ADMIN_PAGE_NEWS eq 'useronly' -->selected="selected"<!-- ENDIF -->>{LANG_CP_USER_ONLY}</option>
+                    </select>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label control-label2" for="pagefaq">{LANG_CP_FAQ}</label>
+				<div class="controls controls2">
+                    <select id="pagefaq" name="pagefaq" class="span5">
+                        <option value="everyone" <!-- IF ADMIN_PAGE_FAQ eq 'everyone' -->selected="selected"<!-- ENDIF -->>{LANG_CP_EVERYONE}</option>
+                        <option value="useronly" <!-- IF ADMIN_PAGE_FAQ eq 'useronly' -->selected="selected"<!-- ENDIF -->>{LANG_CP_USER_ONLY}</option>
+                    </select>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label control-label2" for="showpageusers">{LANG_CP_SHOW_PAGE_USERS}</label>
+				<div class="controls controls2">
+                    <select id="showpageusers" name="showpageusers" class="span5">
+                        <option value="everyone" <!-- IF ADMIN_SHOW_PAGE_USERS eq 'everyone' -->selected="selected"<!-- ENDIF -->>{LANG_CP_EVERYONE}</option>
+                        <option value="useronly" <!-- IF ADMIN_SHOW_PAGE_USERS eq 'useronly' -->selected="selected"<!-- ENDIF -->>{LANG_CP_USER_ONLY}</option>
+                        <option value="noteveryone" <!-- IF ADMIN_SHOW_PAGE_USERS eq 'noteveryone' -->selected="selected"<!-- ENDIF -->>{LANG_CP_NOT_FOR_EVERYONE}</option>
+                    </select>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label control-label2" for="showprofileusers">{LANG_CP_SHOW_PROFILE_USERS}</label>
+				<div class="controls controls2">
+                    <select id="showprofileusers" name="showprofileusers" class="span5">
+                        <option value="everyone" <!-- IF ADMIN_SHOW_PROFILE_USERS eq 'everyone' -->selected="selected"<!-- ENDIF -->>{LANG_CP_EVERYONE}</option>
+                        <option value="useronly" <!-- IF ADMIN_SHOW_PROFILE_USERS eq 'useronly' -->selected="selected"<!-- ENDIF -->>{LANG_CP_USER_ONLY}</option>
+                        <option value="noteveryone" <!-- IF ADMIN_SHOW_PROFILE_USERS eq 'noteveryone' -->selected="selected"<!-- ENDIF -->>{LANG_CP_NOT_FOR_EVERYONE}</option>
+                    </select>
+				</div>
+			</div>
+            <div class="form-actions">
+				<button class="btn btn-small btn-success"><i class="fa fa-save"></i> {LANG_CP_SAVE_CHANGES}</button>
+			</div>
+        </form>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

@@ -1,0 +1,118 @@
+<!-- INCLUDE simple_header.html -->
+<!-- IF FORGET_FORM -->
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".submit").on('click',function(){
+    	$(".submit").html('<i class="fa fa-spinner fa-pulse"></i> {LANG_FORGET_YOUR_PASSWORD}');
+    	$("#forgetpassword").submit();	
+    });
+});
+</script> 
+    <div class="login-form-warp border-box c-fix default-box">
+        <div class="section-content">
+            <form  name="forgetpassword" id="forgetpassword" class="form-horizontal" role="form" action="users.php?mode=forget" method="post">
+                <input name="action" type="hidden" id="action" value="forgetpassword"/>
+                <input type="hidden" name="token" value="{TOKEN}" />
+                <div class="form-group">
+                    <label class="col-sm-12" for="email">{LANG_EMAIL_ADDRESS}</label>
+                    <div class="col-sm-12 section-email">
+                        <h3 class="section-title hidden">{LANG_EMAIL_ADDRESS}</h3>
+                        <input type="text" placeholder="{LANG_EMAIL_ADDRESS}" class="form-control" name="email" />
+                        <!-- IF IS_NOTFORGET -->
+                        <div class="form-messeges error glass">
+                          <div class="messege-warp">
+                            <span class="messege-text"><i class="fa fa-exclamation-triangle"></i> {LANG_EMAIL_ADDRESS_IS_INCORRECT}</span>
+                          </div>
+                        </div>
+                        <!-- ELSEIF FORGET_INVALID -->
+                        <div class="form-messeges error glass">
+                          <div class="messege-warp">
+                            <span class="messege-text">{LANG_POWER_TO_YOUR_REQUEST}</span>
+                          </div>
+                        </div>
+
+                        <div class="form-messeges error glass">
+                          <div class="messege-warp">
+                            <span class="messege-text"><i class="fa fa-exclamation-triangle"></i> {LANG_THIS_FIELD_IS_REQUIRED}</span>
+                          </div>
+                        </div>
+                        <!-- ENDIF -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 align-center">
+                        <a class="section-btn form-button btn-block form-button-green submit">{LANG_FORGET_YOUR_PASSWORD}</a>
+                    </div>
+                    <br />
+                    <div class="col-sm-12"><a href="users.php?mode=login" class="link-simple2">{LANG_BACK_TO} {LANG_LOGIN}</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- ELSEIF FORGET_SEND -->
+<div class="forget-form-warp border-box c-fix default-box"> 	  
+    <div class="form-messeges done light">
+        <div class="messege-warp">
+            <span class="messege-text"><i class="fa fa-check-circle"></i> {LANG_BEEN_SENT_CHANGE_THE_PASSWORD}</span>
+        </div>
+    </div>
+    <br />
+    <div class="section-actionbts  align-center">
+        <a class="section-btn form-button form-button-default" href="users.php?mode=login">{LANG_RETURN_TO_LOGIN}</a>
+    </div>
+</div>
+<!-- ELSEIF FORGET_SET_KEY -->
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".submit").on('click',function(){
+        var password = $("#password").val();
+        if(password.length > 5)
+        {
+            $(".submit").html('<i class="fa fa-spinner fa-pulse"></i> {LANG_CHANGE_PASSWORD}');
+            $("#resetpassword").submit();
+        }
+        else
+        {
+            if(!password)
+            {
+                $(".form-messeges").removeClass('hidden').addClass('error');
+                $(".form-messeges").html('{LANG_THIS_FIELD_IS_REQUIRED}');
+            }
+            else
+            {
+                $(".form-messeges").removeClass('hidden').addClass('error');
+                $(".form-messeges").html('{LANG_PASSWORD_BUT_LESS_THAN}');
+            }
+        }
+    });
+});
+</script>
+<div class="forget-form-warp border-box c-fix default-box">
+    <div class="section-content">
+        <h1>{LANG_CHANGE_PASSWORD}</h1>
+        <form id="resetpassword" class="form-horizontal" action="users.php?mode=forget" method="post">
+            <div class="form-group section-password">
+                <div class="col-sm-12">
+                    <h3 class="section-title">{LANG_ENTER_THE_NEW_PASSWORD}</h3>
+                    <input type="password" placeholder="{LANG_NEW_PASSWORD}" class="form-control" name="password" id="password" />
+                    <div class="form-messeges error glass hidden">
+                        <div class="messege-warp">
+                            <span class="messege-text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-sm-12 align-center">
+                    <a class="btn-block section-btn form-button form-button-green submit">{LANG_CHANGE_PASSWORD}</a>
+                </div>
+            </div>
+            <input name="login" type="hidden" id="login" value="{FORGET_USERNAME}"/>
+            <input name="key" type="hidden" id="key" value="{FORGET_KEY}"/>
+            <input name="action" type="hidden" id="action" value="resetpassword"/>
+        </form>
+    </div>
+</div>
+<!-- ENDIF -->
+<!-- INCLUDE simple_footer.html -->

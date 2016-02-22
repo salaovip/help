@@ -1,0 +1,106 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1>
+		<i class="fa fa-user"></i> {PAGE_TITLE}&nbsp;&nbsp;
+        <a href="users.php" class="btn btn-mini btn-success"><i class="fa fa-angle-left"></i> {LANG_CP_BACK}</a>                
+	</h1>
+</div>
+<div class="row-fluid">
+	<div class="span3 center">
+		<span class="profile-picture">
+			<img class="editable" alt="{USER_USERNAME}" id="avatar2" src="{USER_AVATER}" style="width: 180px;" />
+		</span>
+		<div class="space space-4"></div>
+        <a href="users.php?action=edit&id={USER_UID}" class="btn btn-small btn-block btn-success" style="max-width: 190px;">
+			<i class="fa fa-pencil"></i> {LANG_CP_EDIT_PROFILE}
+		</a>
+	</div><!--/span-->
+	<div class="span9">
+		<div class="profile-user-info">
+			<div class="profile-info-row">
+				<div class="profile-info-name"> {LANG_CP_USERNAME} </div>
+				<div class="profile-info-value">
+					<span>{USER_USERNAME}</span>
+				</div>
+			</div>
+            <div class="profile-info-row">
+				<div class="profile-info-name"> {LANG_CP_FIRSTNAME} </div>
+				<div class="profile-info-value">
+					<span>{USER_FIRSTNAME}</span>
+				</div>
+			</div>
+            <div class="profile-info-row">
+				<div class="profile-info-name"> {LANG_CP_LASTNAME} </div>
+				<div class="profile-info-value">
+					<span>{USER_LASTNAME}</span>
+				</div>
+			</div>
+            <div class="profile-info-row">
+				<div class="profile-info-name"> {LANG_CP_EMAIL} </div>
+				<div class="profile-info-value">
+                    <i class="fa fa-envelope-o"></i> &nbsp;&nbsp;
+					<span>{USER_EMAIL}</span>
+				</div>
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> {LANG_CP_LOCATION} </div>
+				<div class="profile-info-value">
+					<i class="fa fa-map-marker"></i> &nbsp;&nbsp;
+					<span>{USER_LOCATION}</span>
+				</div>
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> Member for </div>
+				<div class="profile-info-value">
+                    <i class="fa fa-clock-o"></i> &nbsp;&nbsp;
+					<span>{USER_TIMEREG}</span>
+                    <span>{USER_TIMEAGO}</span>
+				</div>
+			</div>
+		</div>
+		<div class="hr hr-8 dotted"></div>
+		<div class="profile-user-info">
+			<div class="profile-info-row">
+				<div class="profile-info-name"> {LANG_CP_WEBSITE} </div>
+				<div class="profile-info-value">
+                    <i class="fa fa-chain"></i> &nbsp;&nbsp;
+					<a href="{USER_WEBSITE}" target="_blank">{USER_WEBSITE}</a>
+				</div>
+			</div>
+            
+            <div class="profile-info-row">
+				<div class="profile-info-name"> Socials </div>
+				<div class="profile-info-value">
+                    <i class="fa fa-share-alt"></i> &nbsp;&nbsp;
+                    <ul class="userprofile_social">
+                        <!-- IF USER_FACEBOOK -->
+                        <li class="facebook"><a href="https://www.facebook.com/{USER_FACEBOOK}" class="ttip" data-toggle="tooltip" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF USER_TWITTER -->
+                        <li class="twitter"><a href="https://twitter.com/{USER_TWITTER}" class="ttip" data-toggle="tooltip" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF USER_GOOGLE -->
+                        <li class="google"><a href="https://plus.google.com/{USER_GOOGLE}" class="ttip" data-toggle="tooltip" title="google+" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF USER_YOUTUBE -->
+                        <li class="youtube"><a href="https://www.youtube.com/user/{USER_YOUTUBE}" class="ttip" data-toggle="tooltip" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF USER_VIMEO -->
+                        <li class="vimeo"><a href="https://vimeo.com/{USER_VIMEO}" title="vimeo" class="ttip" data-toggle="tooltip" target="_blank"><i class="fa fa-vimeo"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF USER_FILCKR -->
+                        <li class="flickr"><a href="https://www.flickr.com/{USER_FILCKR}" class="ttip" data-toggle="tooltip" title="flickr" target="_blank"><i class="fa fa-flickr"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF USER_DRIBBBLE -->
+                        <li class="dribble"><a href=" https://dribbble.com/{USER_DRIBBBLE}" class="ttip" data-toggle="tooltip" title="dribble" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF USER_PINTEREST -->
+                        <li class="pinterest"><a href="http://pinterest.com/{USER_PINTEREST}" class="ttip" data-toggle="tooltip" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                        <!-- ENDIF -->
+                    </ul>
+				</div>
+			</div>
+		</div>
+	</div><!--/span-->
+</div>
+<!-- INCLUDE footer.html -->

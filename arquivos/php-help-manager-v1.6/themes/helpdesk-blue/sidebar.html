@@ -1,0 +1,43 @@
+<!-- IF NAV_CAT_ART -->
+    <div class="jumbotron sidebar_info">
+        <i class="fa fa-lightbulb-o"></i>
+        <br />
+        {TOTAL_ART} {LANG_ARTICLES}
+    </div>
+    <ul class="nav nav-pills nav-stacked ticket-nav">     
+        <!-- BEGIN loop_category_article -->
+        <li <!-- IF CATEIDSET eq loop_category_article.ID --> class="active"<!-- ENDIF -->>
+            <a href="index.php?catid={loop_category_article.ID}">
+                <!-- IF CATEIDSET eq loop_category_article.ID -->
+                <i class="fa fa-folder-open-o"></i>
+                <!-- ELSE -->
+                <i class="fa fa-folder-o"></i>
+                <!-- ENDIF -->
+                <span class="badge pull-right">{loop_category_article.TOTAL}</span> {loop_category_article.NAME}
+            </a>
+        </li>
+        <!-- END loop_category_article -->
+    </ul>
+<!-- ENDIF -->
+  
+<!-- IF NAV_CAT_NEW -->
+    <div class="jumbotron sidebar_info">
+        <i class="fa fa-bullhorn"></i>
+        <br />
+        {TOTAL_POST} {LANG_INFOPOSTS}
+    </div>
+    <ul class="nav nav-pills nav-stacked ticket-nav">
+        <!-- BEGIN loop_category_news -->
+        <li <!-- IF CATEIDSET eq loop_category_news.ID --> class="active"<!-- ENDIF -->>
+            <a href="index.php?catid={loop_category_news.ID}">
+                <!-- IF CATEIDSET eq loop_category_news.ID -->
+                <i class="fa fa-folder-open-o"></i>
+                <!-- ELSE -->
+                <i class="fa fa-folder-o"></i>
+                <!-- ENDIF -->
+                <span class="badge pull-right">{loop_category_news.TOTAL}</span> {loop_category_news.NAME}
+            </a>
+        </li>
+        <!-- END loop_category_news -->
+    </ul> 
+<!-- ENDIF -->

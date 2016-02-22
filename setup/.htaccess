@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /envato/works/php-help-manager-v2.0/setup/
+	RewriteRule ^modrewrite.test*$ modrewrite.php [L]
+</IfModule>

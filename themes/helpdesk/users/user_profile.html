@@ -1,0 +1,110 @@
+<!-- INCLUDE overall_header.html -->
+<div class="col-md-12 main-content">
+<!-- IF IS_SHOW_PROFILE_USERS -->
+    <!-- INCLUDE msg_members_only.html -->
+<!-- ELSE -->    
+    <div class="cover-section">
+        <!-- IF IS_USER_PROFILE_CRR -->
+        <a href="users.php?mode=editprofile" class="editable-button micon-inline micon-inline-edit" title="{LANG_EDIT_COVER}"></a>
+        <!-- ENDIF -->
+        <img width="1190" height="260" src="{IN_USER_COVER}" class="attachment-profile-cover-1190" alt="alizarred-wide" />
+        <div class="profile-avatar">
+            <img class="avatar-image avatar-80" src="{IN_USER_IMG80}" />
+            <!-- IF IS_USER_PROFILE_CRR -->
+            <a href="users.php?mode=editprofile" class="editable-button micon-inline micon-inline-edit" title="{LANG_EDIT_AVATAR}"></a>
+            <!-- ENDIF -->
+        </div>
+    </div>
+    <div class="profile-user-container"> 
+        <div class="profile-user-id">
+            <span class="id-display-name">{IN_USER_NAME}</span>
+            <span class="id-occupation"></span>
+            <!-- IF IN_USER_LOCATION --><span class="id-location"><i class="fa fa-map-marker"></i> {IN_USER_LOCATION}</span><!-- ENDIF -->
+        </div>
+        <div class="clear_20"></div>
+    </div>
+    <div class="profile-content-warp">
+        <div class="section-column section-column-left">
+            <div class="section-wrap default-box">
+                <div class="profile-user-stats phone-js">
+                    <ul>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-user"></i> {LANG_USERNAME}</span>
+                            <span class="stat-counter">{IN_USER_NAME}</span>
+                        </li>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-user"></i> {LANG_FULL_NAME}</span>
+                            <span class="stat-counter">{IN_USER_FNAME} {IN_USER_LNAME}</span>
+                        </li>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-map-marker"></i> {LANG_LOCATION}</span>
+                            <span class="stat-counter">{IN_USER_LOCATION}</span>
+                        </li>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-eye"></i> {LANG_VIEW_PROFILE}</span>
+                            <span class="stat-counter">{IN_USER_SHOW_PROFILE}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+        <div class="section-column section-column-right">
+            <div class="section-wrap default-box">
+                <div class="profile-user-stats phone-js">
+                    <ul>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-chain"></i> {LANG_WEBSITE}</span>
+                            <span class="stat-counter">
+                            <!-- IF IN_USER_WEBSITE -->
+                                <a class="id-website" href="{IN_USER_WEBSITE}" title="{LANG_WEBSITE}" target="_blank">{IN_USER_WEBSITE}</a>
+                            <!-- ENDIF -->
+                            </span>
+                        </li>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-envelope-o"></i> {LANG_EMAIL_ADDRESS}</span>
+                            <span class="stat-counter"> <!-- IF USER_GROUP eq 'administrator' || USER_ID eq IN_USER_ID -->{IN_USER_EMAIL}<!-- ELSE -->{LANG_EMAIL_IS_HIDDEN}<!-- ENDIF --></span>
+                        </li>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-clock-o"></i> {LANG_MEMBER_FOR}</span>
+                            <span class="stat-counter">{IN_USER_TIMEAGO}</span>
+                        </li>
+                        <li class="stat-label stat-following">
+                            <span class="stat-text"><i class="fa fa-share-alt"></i> {LANG_SOCIALS}</span>
+                            <span class="stat-counter">
+                                <ul class="userprofile_social">
+                                    <!-- IF IN_USER_FACEBOOK -->
+                                    <li class="facebook"><a href="https://www.facebook.com/{IN_USER_FACEBOOK}" class="ttip" data-toggle="tooltip" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <!-- ENDIF -->
+                                    <!-- IF IN_USER_TWITTER -->
+                                    <li class="twitter"><a href="https://twitter.com/{IN_USER_TWITTER}" class="ttip" data-toggle="tooltip" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <!-- ENDIF -->
+                                    <!-- IF IN_USER_GOOGLE -->
+                                    <li class="google"><a href="https://plus.google.com/{IN_USER_GOOGLE}" class="ttip" data-toggle="tooltip" title="google+" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                    <!-- ENDIF -->
+                                    <!-- IF IN_USER_YOUTUBE -->
+                                    <li class="youtube"><a href="https://www.youtube.com/user/{IN_USER_YOUTUBE}" class="ttip" data-toggle="tooltip" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                    <!-- ENDIF -->
+                                    <!-- IF IN_USER_VIMEO -->
+                                    <li class="vimeo"><a href="https://vimeo.com/{IN_USER_VIMEO}" title="vimeo" class="ttip" data-toggle="tooltip" target="_blank"><i class="fa fa-vimeo"></i></a></li>
+                                    <!-- ENDIF -->
+                                    <!-- IF IN_USER_FILCKR -->
+                                    <li class="flickr"><a href="https://www.flickr.com/{IN_USER_FILCKR}" class="ttip" data-toggle="tooltip" title="flickr" target="_blank"><i class="fa fa-flickr"></i></a></li>
+                                    <!-- ENDIF -->
+                                    <!-- IF IN_USER_DRIBBBLE -->
+                                    <li class="dribble"><a href=" https://dribbble.com/{IN_USER_DRIBBBLE}" class="ttip" data-toggle="tooltip" title="dribble" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                    <!-- ENDIF -->
+                                    <!-- IF IN_USER_PINTEREST -->
+                                    <li class="pinterest"><a href="http://pinterest.com/{IN_USER_PINTEREST}" class="ttip" data-toggle="tooltip" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                    <!-- ENDIF -->
+                                </ul>
+                                <div class="c-fix"></div>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ENDIF -->
+</div>
+<!-- INCLUDE overall_footer.html -->

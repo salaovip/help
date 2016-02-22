@@ -1,0 +1,123 @@
+<!-- INCLUDE header.html -->
+
+<div class="page-header position-relative">
+	<h1>
+		{PAGE_TITLE}                             
+	</h1>
+</div>
+
+<form action="settings.php?mode=themes" method="post" name="form" class="form-horizontal" style="padding: 0 !important;margin: 0 !important;">            
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat widget-header-small">
+                <h5><i class="icon-desktop"></i>{LANG_CP_THEMES}</h5>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main">
+                
+                    <!-- IF ADMIN_SAVETHEME -->
+                    <div class="alert alert-block alert-success">
+                    	<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                    	<p>
+                    		<strong><i class="icon-ok"></i> {LANG_CP_WELL_DONE} </strong> 
+                  		    {LANG_CP_THEME_ACTIVATED_SUCCESSFULLY}{THEMENAME}
+                    	</p>
+                    </div>
+                    <!-- ENDIF -->
+                    <ol class="box_layout_list">
+                        {ADMIN_SITE_THEME}
+                    </ol>
+                </div><!--/widget-main-->
+            </div><!--/widget-body-->
+        </div><!--/widget-box-->
+    </div>
+</div>
+
+<!-- IF ADMIN_SAVE -->
+<div class="alert alert-block alert-success">
+	<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+	<p>
+		<i class="icon-ok"></i> {LANG_CP_SAVED_SUCCESSFULLY}
+	</p>
+</div>
+<!-- ENDIF -->
+
+
+<div class="row-fluid">
+    <div class="span4">
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat widget-header-small">
+                <h5><i class="icon-picture"></i> {LANG_CP_FAVICON}</h5>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main">
+                    
+                        <input type="text" name="bg_favicon" class="img-path form-control span9" value="{ADMIN_BG_FAVICON}" id="favicon" />
+                        <input id="upload_favicon_button" type="button" class="btn btn-small btn-info" value="{LANG_CP_UPLOAD}" style="margin-top:1px;display:<!-- IF ADMIN_BG_FAVICON -->none<!-- ENDIF -->"/>
+                        <div style="clear:both;"></div>
+                        <div id="favicon-preview" class="img-preview" style="display:<!-- IF ADMIN_BG_FAVICON -->block<!-- ELSE -->none<!-- ENDIF -->;">
+                            <img src="<!-- IF ADMIN_BG_FAVICON -->../{ADMIN_BG_FAVICON}<!-- ELSE -->assets/img/spacer.png<!-- ENDIF -->" alt="" style="width: 150px;height: 130px;" />
+                            <a class="del-img" title="{LANG_CP_DELETE}"></a>
+                        </div>
+                        <div style="clear:both;"></div>
+                     
+                </div><!--/widget-main-->
+            </div><!--/widget-body-->
+        </div><!--/widget-box-->
+    </div>
+    <div class="span4">
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat widget-header-small">
+                <h5><i class="icon-picture"></i> {LANG_CP_COVER_BACKGROUND}</h5>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main">
+                        <input type="text" name="bg_image" class="img-path form-control span9" value="{ADMIN_BG_IMAGE}" id="featured" />
+                        <input id="upload_featured_button" type="button" class="btn btn-small btn-info" value="{LANG_CP_UPLOAD}" style="margin-top:1px;display:<!-- IF ADMIN_BG_IMAGE -->none<!-- ENDIF -->"/>
+                        <div style="clear:both;"></div>
+                        <div id="featured-preview" class="img-preview" style="display:<!-- IF ADMIN_BG_IMAGE -->block<!-- ELSE -->none<!-- ENDIF -->;">
+                            <img src="<!-- IF ADMIN_BG_IMAGE -->../{ADMIN_BG_IMAGE}<!-- ELSE -->assets/img/spacer.png<!-- ENDIF -->" alt="" style="width: 150px;height: 130px;" />
+                            <a class="del-img" title="{LANG_CP_DELETE}"></a>
+                        </div>
+                        <div style="clear:both;"></div>
+                </div><!--/widget-main-->
+            </div><!--/widget-body-->
+        </div><!--/widget-box-->
+    </div>
+    
+    <div class="span4">
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat widget-header-small">
+                <h5><i class="icon-adjust"></i> {LANG_CP_COVER_TEXT_COLOR}</h5>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main">
+
+                    <div class="pp-background-color">
+                        <div id="backgroundcolorselect" class="colorSelector pp-color"><div style="background-color:{ADMIN_BG_COLOR}"></div></div>
+                    	<input class="pp-input-text" id="bg_color" type="text" name="bg_color" value="{ADMIN_BG_COLOR}"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+    
+                </div><!--/widget-main-->
+            </div><!--/widget-body-->
+        </div><!--/widget-box-->
+    </div>
+    
+    
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="form-actions" style="text-align: left;padding: 5px 0 0 0;">
+    		<button class="btn btn-small btn-success">
+    			 {LANG_CP_SAVE_CHANGES}
+    			<i class="icon-arrow-right icon-on-right bigger-110"></i>
+    		</button>
+            <input type="hidden" name="query" value="savesetting" />
+        </div>
+    </div>
+</div>
+</form>
+<!-- INCLUDE footer.html -->

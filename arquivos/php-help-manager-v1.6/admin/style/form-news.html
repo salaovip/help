@@ -1,0 +1,67 @@
+<!-- INCLUDE header.html -->
+
+<div class="page-header position-relative">
+	<h1>
+		{PAGE_TITLE}&nbsp;&nbsp;
+        <a href="news.php" class="btn btn-mini btn-success">{LANG_CP_BACK}</a>
+	</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <form action="news.php" method="post" name="form" class="form-horizontal">
+            <input type="hidden" name="query" value="{QUERY}" />
+            <input type="hidden" name="id" value="{ID}" />
+            <input type="hidden" name="oldtitle" value="{TITLE}" />  
+            <div class="control-group">
+				<label class="control-label" for="form-field-title">title</label>
+				<div class="controls">
+					<input type="text" id="form-field-title" name="title" placeholder="" value="{TITLE}" class="span6" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-title">Categorys</label>
+				<div class="controls">
+					<div class="span3">{CATE}</div>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-title">content</label>
+				<div class="controls">
+					<textarea class="summernote" rows="10" id="texteditor" name="content" style="">{CONTENT}</textarea>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-orders">{LANG_CP_ORDER}</label>
+				<div class="controls">
+					<input type="text" id="form-field-orders" name="orders" value="{ORDERS}"  class="span2" style="text-align: center;" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-status">{LANG_CP_STATUS}</label>
+				<div class="controls">
+					<label style="width: 60px;">
+						<input name="status"  class="ace-switch ace-switch-3" type="checkbox" <!-- IF STATUS -->checked=""<!-- ENDIF --> />
+						<span class="lbl"></span>
+					</label>
+				</div>
+			</div>
+            <div class="form-actions">
+				<button class="btn btn-small btn-success">
+					 <!-- IF QUERY eq 'edit' -->{LANG_CP_UPDATE}<!-- ELSE -->{LANG_CP_ADD}<!-- ENDIF -->
+					<i class="icon-arrow-right icon-on-right bigger-110"></i>
+				</button>
+				&nbsp; &nbsp; &nbsp;
+				<button class="btn btn-small btn-danger" type="reset">
+					<i class="icon-undo bigger-110"></i>
+					{LANG_CP_RESET}
+				</button>
+			</div>
+        </form>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->
+<script>
+$(document).ready(function() {
+  $('.summernote').summernote({ height: 250});
+});
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{LANG_CP_LANG}">
+	<head>
+		<meta charset="utf-8" />
+		<title>{SITE_NAME} | {PAGE_TITLE}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--basic styles-->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+		<!--page specific plugin styles-->
+		<!--fonts-->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+		<!--ace styles-->
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+        <link rel="stylesheet" href="assets/js/thickbox/thickbox.css" />
+        <link rel="stylesheet" href="assets/css/colorpicker.css" />
+        <link rel="stylesheet" href="assets/css/summernote.css" />
+        <link rel="stylesheet" href="assets/css/megatpl.css" />
+		<link href="assets/css/bootstrap-custom.css" rel="stylesheet" type="text/css" />
+        <!-- IF LANG_CP_DIR eq 'rtl' -->
+        <link href="assets/css/mega-rtl.css" rel="stylesheet" type="text/css" />
+        <!-- ENDIF -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+	<body dir="{LANG_CP_DIR}">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a href="#" class="brand">
+						<small>{SITE_NAME}</small>
+					</a><!--/.brand-->
+					<ul class="nav ace-nav pull-right">
+                        <li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                                <img class="nav-user-photo" src="assets/images/avatar.jpg" alt="{USERNAME}" />
+								<span class="user-info"><small>{LANG_CP_WELCOME},</small>{USERNAME}</span>
+								<i class="icon-caret-down"></i>
+							</a>
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+								<li><a href="index.php?mode=profile"><i class="icon-user"></i> {LANG_CP_PROFILE}</a></li>
+								<li class="divider"></li>
+								<li><a href="acp-login.php?do=logout"><i class="icon-off"></i> {LANG_CP_LOGOUT}</a></li>
+							</ul>
+						</li>
+					</ul><!--/.ace-nav-->
+				</div><!--/.container-fluid-->
+			</div><!--/.navbar-inner-->
+		</div>
+		<div class="main-container container-fluid">
+        <!-- INCLUDE sidebar.html -->
+			<div class="main-content">
+				<div class="breadcrumbs" id="breadcrumbs">
+				</div>
+				<div class="page-content">

@@ -1,0 +1,50 @@
+body{direction: rtl;font-family: Tahoma;}
+.navbar-nav {float: right;margin: 0;-webkit-padding-start: 0;}
+.navbar-header {float: right;}
+.navbar-inverse .navbar-brand {margin-left: 10px;margin-right: 0;}
+.navbar-nav.navbar-right:last-child {margin-right: 0;margin-left: -15px;}
+.navbar-right {float: left!important;}
+.navbar-nav>li {float: right;}
+.box-search button.btn.nav-search-submit {right: auto;left: 5px;}
+.state-overview .symbol, .state-overview .value {float: right;text-align: center;-webkit-border-radius: 0 4px 4px 0;border-radius: 0 4px 4px 0;}
+.nav {-webkit-padding-start: 0;}
+.ticket-nav-details li .ticket-check, .ticket-nav-details li .ticket-info,
+.ticket-nav-details li .ticket-status, .ticket-nav-details li .ticket-priority,
+.ticket-nav-details li .ticket-date {
+float: right;
+}
+.t-info-row span, .ticket-info span {float: right;margin-right: 5px;margin-left: 15px;}
+@media (min-width:992px){.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{float:right}}
+.pull-right {float: left!important;}
+.pull-left {float: right!important;}
+.ticket-nav li a i {padding-right: 0;padding-left: 10px;}
+.ticket-nav-details li .ticket-date {text-align: left;}
+#footer ul.social {text-align: left;}
+.pagination {-webkit-padding-start: 0;}
+.copyright {text-align: right;}
+.asign-ticket p {direction: ltr;text-align: right;}
+.voting_btn {float: right;margin-left: 5px;}
+.sidebar_contact ul {-webkit-padding-start: 0;}
+.sidebar_contact ul {text-align: right;}
+
+@media only screen and (max-width: 994px) and (min-width: 770px)
+{
+    .navbar-brand {float: none;}
+    .navbar-toggle {float: left;}
+    .navbar-header {float: none;margin-top: 10px;padding-bottom: 10px;border-bottom: 1px solid #3E3E3E;}
+    .navbar-nav, .navbar-right {margin-top: 0; }
+}
+@media only screen and (max-width: 770px)
+{
+    .navbar-brand {float: right;}
+    .navbar-toggle {float: left;}
+    .navbar-header {float: none;}
+    .navbar-nav>li {float: none;}
+    .navbar-nav, .navbar-right {float: none!important;text-align: right;}
+
+}
+
+@media only screen and (max-width: 570px)
+{
+    .navbar-inverse .navbar-brand {text-align: center;width: 100%}
+}

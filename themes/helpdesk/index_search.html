@@ -1,0 +1,80 @@
+<!-- INCLUDE overall_header.html -->
+<div class="col-md-12 main-content">
+    <div class="row question-filter" id="question_filter">
+        <div class="col-md-12 current-category">
+            <span><i class="fa fa-lightbulb-o"></i> {PAGE_TITLE}</span>
+        </div> 
+    </div>
+    <div class="col-md-2  main-content left-sidebar">
+        <div class="widget widget-statistic">
+        	<p class="questions-count">
+        		<span>{COUNT_NEWS_POSTS}</span><br>
+                {LANG_NEWS}
+        	</p>
+        </div>
+        <div class="widget widget-statistic">
+        	<p class="members-count">
+        		<span>{COUNT_KNOWLEDGE_POSTS}</span><br>
+                {LANG_KNOWLEDGE_BASE}
+        	</p>
+        </div>
+    </div>
+    <div class="col-md-10  main-content">
+        <div class="main-questions-list">
+            <ul id="main_questions_list">
+                <!-- BEGIN loop_posts_search -->
+                <li class="question type-question status-publish hentry question-item" data-id="{loop_posts_search.POST_ID}" style="<!-- IF loop_posts_search.POST_TYPE eq 'knowledgebase' -->border-left: 4px solid #f39c12;<!-- ELSEIF loop_posts_search.POST_TYPE eq 'news' -->border-left: 4px solid #3498db;<!-- ELSE --><!-- ENDIF -->">
+                    <div class="col-md-8 col-xs-8 q-left-content">{loop_posts_search.POST_TYPE}
+                        <div class="q-ltop-content">
+                            <a href="index.php?post_id={loop_posts_search.POST_ID}" class="question-title">{loop_posts_search.POST_TITLE}</a>
+                        </div>
+                        <div class="q-lbtm-content">
+                            <div class="question-cat">
+                                <div class="clearfix"></div>                                  
+                                <span class="question-time">{loop_posts_search.POST_TIME_AGO} {LANG_IN}</span>
+                                <span class="question-category">
+                                    <a href="index.php?mode=news&term_id={loop_posts_search.POST_TERM_ID}">{loop_posts_search.POST_TERM_NAME}</a>
+                                </span>
+                            </div>   
+                        </div>
+                        <div class="q-lbtm-content">
+                            <div class="question-cat">
+                                <div class="clearfix"></div>                
+                                <a href="users.php?username={loop_posts_search.POST_AUTHOR}">
+                                    <span class="author-avatar"><img src="{loop_posts_search.AUTHOR_AVATER}" class="avatar" alt="{loop_posts_search.POST_AUTHOR}"></span>
+                                    <span class="author-name">{loop_posts_search.POST_AUTHOR}</span>
+                                </a>                    
+                                <span title="{loop_posts_search.AUTHOR_GROUP_NAME}" class="user-badge" style="background: {loop_posts_search.AUTHOR_GROUP_COLOR};">{loop_posts_search.AUTHOR_GROUP_NAME}</span>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4 q-right-content">
+                        <ul class="question-statistic">
+                            <li><span class="question-views">{loop_posts_search.POST_VIEW}</span>{LANG_VIEWS}</li>
+                            <li class=""><span class="question-comments" style="color: <!-- IF loop_posts_search.VOTE_COLOR -->#208ACA<!-- ELSE -->red<!-- ENDIF --> ;">{loop_posts_search.POST_VOTE}</span> {LANG_VOTING}</li>
+                        </ul>
+                    </div>                   
+                </li>
+                <!-- BEGINELSE -->
+                <li class="question type-question status-publish hentry question-item search-item">
+                    <h1>{LANG_DIDNOT_MATCH}</h1>
+                    <!-- IF OPTION_SEARCH_SHOW_HEADER -->
+                    <form action="index.php" method="get" id="support-search" class="support-search-small">
+                      <div>
+                        <input id="q" maxlength="100" name="search" type="text" value="" placeholder="{OPTION_SEARCH_PLACEHOLDER_HEADER}" class="ui-autocomplete-input" role="textbox">
+                        <input id="support-search-submit" type="submit" value="{LANG_SEARCH}">
+                      </div>
+                    </form>
+                    <!-- ENDIF -->
+                </li>
+                <!-- END loop_posts_search -->                                                               
+            </ul>
+        </div>
+        <!-- IF SHOW_PAGINATION -->
+            <ul class="pagination pagination-sm">
+                {PAGINATION}
+            </ul>
+        <!-- ENDIF -->
+    </div>
+</div>
+<!-- INCLUDE overall_footer.html -->

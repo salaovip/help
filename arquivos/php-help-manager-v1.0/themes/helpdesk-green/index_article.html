@@ -1,0 +1,39 @@
+<!-- INCLUDE header.html -->
+<div class="container">
+<!-- INCLUDE state_overview.html -->
+    <div class="row">   
+        <div class="col-md-3">
+            <!-- INCLUDE sidebar.html -->
+        </div>
+        <div class="col-md-9">
+            <section class="panel">
+                <div class="panel-body discussion">
+                    <div class="asign-ticket">
+                        <div class="col-md-12">
+                            <div class="pull-right">
+                                <div class="voting_wrapper" id="{ID}">
+                                    <div class="voting_btn">
+                                        <div class="up_button">&nbsp;</div><span class="up_votes">0</span>
+                                    </div>
+                                    <div class="voting_btn">
+                                        <div class="down_button">&nbsp;</div><span class="down_votes">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="issue-heading">{TITLE}</h1>
+                            <p>
+                                <i class="fa fa-tag"></i> <a href="index.php?catid={CATID}"> {CATENAME}</a> / 
+                                <i class="fa fa-calendar-o"></i> {MODIFIED} / 
+                                <i class="fa fa-eye"></i> {VIEWS} 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12" id="content">
+                        <p>{CONTENT}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

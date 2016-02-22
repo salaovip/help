@@ -1,0 +1,78 @@
+<!-- INCLUDE header.html -->
+
+<div class="page-header position-relative">
+	<h1>
+		{PAGE_TITLE}&nbsp;&nbsp;
+        <a href="faq.php?mode=new" class="btn btn-mini btn-success">{LANG_CP_ADD_NEW}</a> 
+	</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <!-- IF SHOW_PAGINATION -->
+        <div class="pagination">
+        <ul>
+        {PAGINATION}
+        </ul>
+        </div>
+        <!-- ENDIF -->
+        <!-- IF ACTION_TOKEN -->
+        <div class="alert alert-block alert-success">
+			<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+			<p>
+				<i class="icon-ok"></i> {ACTION_TOKEN} {LANG_POST_SUCCESSFULLY}
+			</p>
+		</div>
+        <!-- ENDIF -->
+        <table id="sample-table-2" class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>{LANG_CP_FAQ_ITEMS}</th>
+					<th style="width: 220px;text-align: center;">{LANG_CP_ACTION}</th>
+				</tr>
+			</thead>
+            <tbody>
+            <!-- BEGIN admin_loop_faq -->
+                <tr>
+					<td style="position: relative;">
+                            <strong>{admin_loop_faq.TITLE}</strong> 
+                            <br />
+                            <small>
+                            <strong style="color: #1F7C98;">{LANG_CP_MODIFIED}</strong> : <strong style="color: #E93636;">{admin_loop_faq.MODIFIED}</strong>
+                            </small>
+                        </div>
+                    </td>
+					<td style="text-align: center;line-height: 14px;">
+						<!-- IF admin_loop_faq.STATUS eq 1 -->
+                        <a href="faq.php?action=activ&status=disable&id={admin_loop_faq.ID}" class="btn btn-mini btn-success">
+							<i class="icon-ok bigger-120"></i> {LANG_CP_DISABLE}
+						</a>
+                        <!-- ELSE -->
+                        <a href="faq.php?action=activ&status=enable&id={admin_loop_faq.ID}" class="btn btn-mini btn-danger">
+							<i class="icon-ok bigger-120"></i> {LANG_CP_ENABLE}
+						</a>
+                        <!-- ENDIF -->
+                        <a href="faq.php?action=edit&id={admin_loop_faq.ID}" class="btn btn-mini btn-info">
+							<i class="icon-edit bigger-120"></i> {LANG_CP_EDIT}
+						</a>
+						<a href="faq.php?action=delete&id={admin_loop_faq.ID}&token={TOKEN}" class="btn btn-mini btn-danger">
+							<i class="icon-trash bigger-120"></i> {LANG_CP_DELETE}
+						</a>
+					</td>
+				</tr>
+            <!-- END admin_loop_faq -->
+            </tbody>
+        </table>
+    
+    <!-- IF SHOW_PAGINATION -->
+    <div class="pagination">
+    <ul>
+    {PAGINATION}
+    </ul>
+    </div>
+    <!-- ENDIF -->
+    
+    </div>
+</div>    
+
+
+<!-- INCLUDE footer.html -->

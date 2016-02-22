@@ -1,0 +1,90 @@
+﻿<!-- INCLUDE overall_header.html -->
+<div class="col-md-12 main-content">
+    <div class="row question-filter">
+        <div class="col-md-6 col-xs-12 current-category">
+            <span><i class="fa fa-users"></i> {LANG_USERS}</span>
+        </div>
+        <div class="col-md-6 col-xs-12 sort-questions">
+            <ul>
+                <li><a class="{CLASS_REGISTER}" href="users.php">{LANG_REGISTER}</a></li>
+                <li><a class="{CLASS_NAME}" href="users.php?sort=name">{LANG_NAME}</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-user-list">
+    <!-- IF IS_SHOW_PAGE_USERS -->
+        <!-- INCLUDE msg_members_only.html -->
+    <!-- ELSE -->                
+        <ul id="main_users_list" class="row">
+            <!-- BEGIN loop_users -->
+            <li class="user-item col-md-3 col-sm-6 col-xs-12">
+                <span class="user-avatar">
+                    <img src="{loop_users.IMG}" class="avatar" alt="{loop_users.FULLNAME}"> 
+                </span>
+                <div class="left-info">
+                    <a href="users.php?username={loop_users.USER_NAME}"><span class="display_name">{loop_users.USER_NAME}</span></a><br>
+                    <span class="location"><i class="fa fa-map-marker"></i> {loop_users.LOCATION}</span>
+                    
+                    <ul class="userprofile_social">
+                        <!-- IF loop_users.USER_FACEBOOK -->
+                        <li class="facebook"><a href="https://www.facebook.com/{loop_users.USER_FACEBOOK}" class="ttip" data-toggle="tooltip" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF loop_users.USER_TWITTER -->
+                        <li class="twitter"><a href="https://twitter.com/{loop_users.USER_TWITTER}" class="ttip" data-toggle="tooltip" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF loop_users.USER_GOOGLE -->
+                        <li class="google"><a href="https://plus.google.com/{loop_users.USER_GOOGLE}" class="ttip" data-toggle="tooltip" title="google+" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF loop_users.USER_YOUTUBE -->
+                        <li class="youtube"><a href="https://www.youtube.com/user/{loop_users.USER_YOUTUBE}" class="ttip" data-toggle="tooltip" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF loop_users.USER_VIMEO -->
+                        <li class="vimeo"><a href="https://vimeo.com/{loop_users.USER_VIMEO}" title="vimeo" class="ttip" data-toggle="tooltip" target="_blank"><i class="fa fa-vimeo"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF loop_users.USER_FILCKR -->
+                        <li class="flickr"><a href="https://www.flickr.com/{loop_users.USER_FILCKR}" class="ttip" data-toggle="tooltip" title="flickr" target="_blank"><i class="fa fa-flickr"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF loop_users.USER_DRIBBBLE -->
+                        <li class="dribble"><a href=" https://dribbble.com/{loop_users.USER_DRIBBBLE}" class="ttip" data-toggle="tooltip" title="dribble" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                        <!-- ENDIF -->
+                        <!-- IF loop_users.USER_PINTEREST -->
+                        <li class="pinterest"><a href="http://pinterest.com/{loop_users.USER_PINTEREST}" class="ttip" data-toggle="tooltip" title="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                        <!-- ENDIF -->
+                    </ul>
+                    <div class="c-fix"></div>
+                    <!-- IF loop_users.ID eq USER_ID -->
+                    <div class="user-card-actions c-fix">
+                        <div class="action-container profile-action">
+                            <a href="users.php?mode=profile" class="action-button form-button form-button-default micon-inline micon-inline-profile">{LANG_VIEW_MY_PROFILE}</a>
+                        </div>        
+                    </div>
+                    <!-- ELSE -->
+                    <div class="user-card-actions c-fix">
+                        <div class="action-container following-action follow_{loop_users.ID}">
+                            <a class="action-button form-button form-button-follow form-button-red-light micon-inline-follow" href="users.php?username={loop_users.USER_NAME}"><i class="fa fa-user"></i>{LANG_VIEW_PROFILE}</a>
+                        </div>
+                    </div>
+                    <!-- ENDIF -->
+                </div>
+            </li>
+            <!-- END loop_users -->                         
+        </ul>
+    <!-- ENDIF -->        
+    </div>
+    <div class="clearfix grey-line"></div>
+</div>
+<!-- IF IS_SHOW_PAGE_USERS -->
+<!-- ELSE -->
+    <!-- IF SHOW_PAGINATION -->
+    <ul id="showmore-container" class="showmore-container-wh c-fix  pages-bar-active">
+        <li id="pages-bar" class="pages-bar-key users">
+            <div class="navigation">
+                <ol class="fn-paginate">
+                    {PAGINATION}
+                </ol>
+            </div>
+        </li>
+    </ul>
+    <!-- ENDIF -->
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

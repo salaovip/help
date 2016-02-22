@@ -1,0 +1,116 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1><i class="fa fa-language"></i> {PAGE_TITLE}</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <!-- IF ACTION_TOKEN -->
+        <div class="alert alert-block alert-success">
+			<button type="button" class="close" data-dismiss="alert"><i class="fa fa-remove"></i></button>
+			<p><i class="fa fa-chevron-circle-down"></i> {ACTION_TOKEN}</p>
+		</div>
+        <!-- ENDIF -->
+        <table id="sample-table-2" class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th style="width: 50px;text-align: center;">ID</th>
+                    <th>{LANG_CP_PACKAGE_NAME}</th>
+					<th style="width: 400px;text-align: center;">{LANG_CP_OPTIONS}</th>
+				</tr>
+			</thead>
+            <tbody>
+            <!-- BEGIN admin_loop_language -->
+                <tr>
+					<td style="text-align: center;">{admin_loop_language.ID}</td>
+                    <td>{admin_loop_language.NAME} ({admin_loop_language.CODE}) 
+                    <!-- IF admin_loop_language.DEFAULT -->
+                    <span style="color: #cccccc">{LANG_CP_AS_DEFAULT_LANGUAGE}</span>
+                    <!-- ENDIF -->
+                    </td>
+					<td style="text-align: center;line-height: 14px;">
+                        <a href="language.php?edit_language={admin_loop_language.ID}" class="btn btn-mini btn-success">{LANG_CP_EDIT_PHRASES}</a>
+                        <a href="language.php?download={admin_loop_language.ID}" target="_blank" class="btn btn-mini btn-success">{LANG_CP_EXPORT}</a>
+                        <a href="language.php?make_default={admin_loop_language.ID}" class="btn btn-mini btn-success">{LANG_CP_MAKE_DEFAULT}</a>
+                        <!-- IF admin_loop_language.ACTIVE eq 1 -->
+                        <a href="language.php?action=activ&status=disable&id={admin_loop_language.ID}" class="btn btn-mini btn-success">
+							<i class="icon-ok bigger-120"></i> {LANG_CP_DEACTIVATE}
+						</a>
+                        <!-- ELSE -->
+                        <a href="language.php?action=activ&status=enable&id={admin_loop_language.ID}" class="btn btn-mini btn-danger">
+							<i class="icon-ok bigger-120"></i> {LANG_CP_ACTIVATE}
+						</a>
+                        <!-- ENDIF -->
+						<a href="language.php?action=delete&id={admin_loop_language.ID}&token={TOKEN}" onclick="confirm('Are you sure you want to delete \'{admin_loop_language.NAME}\' pack');" class="btn btn-mini btn-danger">
+							<i class="icon-trash bigger-120"></i> {LANG_CP_DELETE}
+						</a>
+					</td>
+				</tr>
+            <!-- END admin_loop_language -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="page-header position-relative">
+	<h1>
+		{LANG_CP_ADD_NEW_PHRASE}
+	</h1>
+</div>
+<form name="form1" method="post" action="language.php">
+    <fieldset class="fieldset">
+        <div class="row-fluid">
+            <div class="span6">
+                <label for="prasecode">{LANG_CP_PHRASE_CODE}</label>
+                <input type="text" name="varname" id="prasecode" class="span8" />
+            </div>
+            <div class="span6">
+                <label for="language">{LANG_CP_LANGUAGE}</label>
+                <select name="lang_code" id="language" class="span8">
+                    <!-- BEGIN admin_loop_language -->
+                    <option value="{admin_loop_language.CODE}">{admin_loop_language.NAME}</option>
+                    <!-- END admin_loop_language -->
+                </select>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <label for="phrasetext">{LANG_CP_PHRASE_TEXT}</label>
+                <textarea name="text" class="span12" id="text" rows="3"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <div class="row-fluid">
+        <div class="span2">
+            <input type="hidden" name="addlang" value="1" />
+            <input type="submit" name="add_phrase" id="add_phrase" value="{LANG_CP_ADD_PHRASE}" class="btn btn-primary btn-sm" />
+        </div>
+        <div class="span10">
+            <p class="alert alert-info">{LANG_CP_INFO_ADD_NEWPHRASE}</p>
+        </div>
+    </div>
+</form>
+<div class="page-header position-relative">
+	<h1>
+		{LANG_CP_ADD_NEW_LANGUAGE}
+	</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <form action="language.php?import" method="post" enctype="multipart/form-data" name="import_language" id="import_language">
+            <h4>{LANG_CP_UPLOAD_FILE}</h4>
+            <table>
+            <tbody>
+                <tr>
+                    <td style="width: 350px;">{LANG_CP_INF_UPLOAD_LANGUAGE}</td>
+                    <td style="text-align: center;">
+                        <input type="file" name="lang_file" id="lang_file" class="marginBottomLarge">
+                    </td>
+                    <td style="text-align: center;width: 100px">
+                        <input type="submit" name="add_language" id="add_language" value="{LANG_CP_ADD_LANGUAGE}" class="btn btn-primary">
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

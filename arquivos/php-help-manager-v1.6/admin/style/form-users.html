@@ -1,0 +1,71 @@
+<!-- INCLUDE header.html -->
+
+<div class="page-header position-relative">
+	<h1>
+		{PAGE_TITLE}&nbsp;&nbsp;
+        <a href="users.php" class="btn btn-mini btn-success">{LANG_CP_BACK}</a>
+	</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <form action="users.php" method="post" name="form" class="form-horizontal">
+            <input type="hidden" name="query" value="{QUERY}" />
+            <input type="hidden" name="id" value="{ID}" />
+            <input type="hidden" name="oldname" value="{NAME}" />  
+            <div class="control-group">
+				<label class="control-label" for="form-field-username">{LANG_CP_USERNAME}</label>
+				<div class="controls">
+					<input type="text" id="form-field-username" name="username" placeholder="{LANG_CP_USERNAME}" value="{NAME}" class="span3" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-email">{LANG_CP_EMAIL_ADDRESS}</label>
+				<div class="controls">
+					<input type="text" id="form-field-email" name="email" placeholder="{LANG_CP_EMAIL_ADDRESS}" value="{EMAIL}" class="span3" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-password">{LANG_CP_PASSWORD}</label>
+				<div class="controls">
+					<input type="password" id="form-field-password" name="password" placeholder="{LANG_CP_PASSWORD}" value="" class="span3" />
+                    <!-- IF QUERY eq 'edit' -->{LANG_MGS_NEW_PASSWORD}<!-- ENDIF -->
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-isadmin">{LANG_CP_ISADMIN}</label>
+				<div class="controls">
+						<input name="isadmin"  class="ace-switch ace-switch-3" type="checkbox" <!-- IF ISADMIN -->checked=""<!-- ENDIF --> />
+						<span class="lbl"></span>
+				</div>
+			</div>
+            <div class="control-group" >
+				<label class="control-label" for="form-field-groups">{LANG_CP_GROUP}</label>
+				<div class="controls">
+					<select name="groups" id="form-field-groups" class="span3">
+                        {GROUPS}
+                    </select>
+				</div>
+			</div>
+            
+            <div class="control-group">
+				<label class="control-label" for="form-field-status">{LANG_CP_STATUS}</label>
+				<div class="controls">
+						<input name="status"  class="ace-switch ace-switch-3" type="checkbox" <!-- IF STATUS -->checked=""<!-- ENDIF --> />
+						<span class="lbl"></span>
+				</div>
+			</div>
+            <div class="form-actions">
+				<button class="btn btn-small btn-success">
+					 <!-- IF QUERY eq 'edit' -->{LANG_CP_UPDATE}<!-- ELSE -->{LANG_CP_ADD}<!-- ENDIF -->
+					<i class="icon-arrow-right icon-on-right bigger-110"></i>
+				</button>
+				&nbsp; &nbsp; &nbsp;
+				<button class="btn btn-small btn-danger" type="reset">
+					<i class="icon-undo bigger-110"></i>
+					{LANG_CP_RESET}
+				</button>
+			</div>
+        </form>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

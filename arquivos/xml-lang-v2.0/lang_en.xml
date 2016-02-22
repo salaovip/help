@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?><helpdesk_language>
+    <name>English</name>
+    <iso_code>en</iso_code>
+    <phrases>
+        <about_us>About us</about_us>
+    	<accept>Accept</accept>
+    	<action>Action</action>
+    	<activate>activate</activate>
+    	<add>Add</add>
+    	<add_group>Add Group</add_group>
+    	<add_language>Add Language</add_language>
+    	<add_new>Add New</add_new>
+    	<add_new_article>Add New Article</add_new_article>
+    	<add_new_categorie>Add New Categorie</add_new_categorie>
+    	<add_new_group>Add New Group</add_new_group>
+    	<add_new_language>Add New Language</add_new_language>
+    	<add_new_page>Add New Page</add_new_page>
+    	<add_new_phrase>Add New Phrase</add_new_phrase>
+    	<add_new_post>Add New Post</add_new_post>
+    	<add_phrase>Add Phrase</add_phrase>
+    	<add_picture>Add Picture</add_picture>
+    	<add_user_successfully>Add User Successfully</add_user_successfully>
+    	<administrator>Administrator</administrator>
+    	<align1>left</align1>
+    	<align2>center</align2>
+    	<align3>right</align3>
+    	<all_faq>ALL FAQ</all_faq>
+    	<all_knowledgebase>ALL Knowledgebase</all_knowledgebase>
+    	<all_news>ALL News</all_news>
+    	<appearance>Appearance</appearance>
+    	<apply>Apply</apply>
+    	<as_default_language>as Default Language</as_default_language>
+    	<author>Author</author>
+    	<avatar_image_size_must>The image size must be at least 256x256 pixels.</avatar_image_size_must>
+    	<back>Back</back>
+    	<back_to>Back To</back_to>
+    	<been_sent_change_the_password>Been Sent Change The Password</been_sent_change_the_password>
+    	<bulk_actions>Bulk Actions</bulk_actions>
+    	<by>By</by>
+    	<cancel>Cancel</cancel>
+    	<categorie>Categorie</categorie>
+    	<categories>Categories</categories>
+    	<cencel>Cencel</cencel>
+    	<change_avatar>Change Avatar</change_avatar>
+    	<change_cover>Change cover</change_cover>
+    	<change_email_address>Change email address</change_email_address>
+    	<change_password>Change password</change_password>
+    	<click_here_to_login>Click here to login</click_here_to_login>
+    	<confirm_action>Are you sure of the procedure?</confirm_action>
+    	<confirm_password>Confirm Password</confirm_password>
+    	<contact>Contact</contact>
+    	<content_is_available_to_members_only>Content is available to members only</content_is_available_to_members_only>
+    	<copyright>copyright © 2015 All Rights Reserved.</copyright>
+    	<count>Count</count>
+    	<cover_background>Cover Background</cover_background>
+    	<cover_image_size_must>The image size must be at least 1190x260 pixels.</cover_image_size_must>
+    	<cover_text_color>Cover Text Color</cover_text_color>
+    	<crop_avatar>Crop Avatar</crop_avatar>
+    	<crop_cover>Crop Cover</crop_cover>
+    	<dashboard>Dashboard</dashboard>
+    	<date>Date</date>
+    	<date_format>Date Format</date_format>
+    	<deactivate>Deactivate</deactivate>
+    	<delete>Delete</delete>
+    	<delete_categorie_successfully>Delete Categorie Successfully</delete_categorie_successfully>
+    	<delete_language_successfully>Delete Language Successfully.</delete_language_successfully>
+    	<delete_post_successfully>Delete Post successfully.</delete_post_successfully>
+    	<delete_users_successfully>delete users successfully</delete_users_successfully>
+    	<delete_user_successfully>delete user successfully</delete_user_successfully>
+    	<description>Description</description>
+    	<didnot_match>didnot match to our content in asked queries!</didnot_match>
+    	<dir>ltr</dir>
+    	<disable>Disable</disable>
+    	<disable_categorie_successfully>Disable Categorie Successfully</disable_categorie_successfully>
+    	<disable_language_successfully>Disable Language Successfully.</disable_language_successfully>
+    	<disable_post_successfully>Disable Post Successfully.</disable_post_successfully>
+    	<down>Down</down>
+    	<doyou_logout>Do you want to log out?</doyou_logout>
+    	<edit>Edit</edit>
+    	<editing>Editing</editing>
+    	<edit_article>Edit Article</edit_article>
+    	<edit_categorie>Edit Categorie</edit_categorie>
+    	<edit_groups>Edit Groups</edit_groups>
+    	<edit_page>Edit Page</edit_page>
+    	<edit_phrases>Edit Phrases</edit_phrases>
+    	<edit_post>Edit Post</edit_post>
+    	<edit_profile>Edit Profile</edit_profile>
+    	<edit_user_successfully>Edit User Successfully</edit_user_successfully>
+    	<email>E-mail</email>
+    	<email_address>Email Address</email_address>
+    	<email_address_is_required>Email Address is required.</email_address_is_required>
+    	<email_another_user>This email user by another user.</email_another_user>
+    	<email_available_registration>This email is available for registration.</email_available_registration>
+    	<email_is_hidden>Email is hidden.</email_is_hidden>
+    	<email_or_password_is_incorrect>E-mail or password is incorrect</email_or_password_is_incorrect>
+    	<email_templates>Email Templates</email_templates>
+    	<enable>Enable</enable>
+    	<enable_categorie_successfully>Enable Categorie Successfully</enable_categorie_successfully>
+    	<enable_language_successfully>Enable Language Successfully.</enable_language_successfully>
+    	<enable_post_successfully>Enable Post Successfully.</enable_post_successfully>
+    	<english_only_characters>English only characters</english_only_characters>
+    	<enter_email_address>Enter Email address</enter_email_address>
+    	<enter_message>Enter Message</enter_message>
+    	<enter_subject>Enter Subject</enter_subject>
+    	<enter_the_new_email_address>Enter the new Email address</enter_the_new_email_address>
+    	<enter_the_new_password>Enter the new password</enter_the_new_password>
+    	<enter_title_here>Enter title here</enter_title_here>
+    	<enter_username>Enter Username</enter_username>
+    	<error_permission>error permission</error_permission>
+    	<everyone>Everyone</everyone>
+    	<export>Export</export>
+    	<e_mail>E-Mail</e_mail>
+    	<facebook>Facebook</facebook>
+    	<facebook_url>Facebook URL</facebook_url>
+    	<faq>FAQ</faq>
+    	<faq_items>FAQ Items</faq_items>
+    	<favicon>Favicon</favicon>
+    	<featured_image>Featured Image</featured_image>
+    	<firstname>Firstname</firstname>
+    	<first_name_is_required>First name is required</first_name_is_required>
+    	<follow_us_on_facebook>Follow us on Facebook</follow_us_on_facebook>
+    	<follow_us_on_google>Follow us on Google+</follow_us_on_google>
+    	<follow_us_on_twitter>Follow us on Twitter</follow_us_on_twitter>
+    	<forget_password>Forget Password?</forget_password>
+    	<forget_your_password>forget your password</forget_your_password>
+    	<frequently_asked_questions>Frequently Asked Questions</frequently_asked_questions>
+    	<full_name>Full Name</full_name>
+    	<general_setting>General Setting</general_setting>
+    	<google>Google+</google>
+    	<google_url>Google+ URL</google_url>
+    	<group>Group</group>
+    	<gzip_compress>GZIP Compress</gzip_compress>
+    	<home>Home</home>
+    	<howdy>Howdy,</howdy>
+    	<if_you_already_have_an_account>If You already have an account</if_you_already_have_an_account>
+    	<if_you_dont_have_account>If You Dont have account</if_you_dont_have_account>
+    	<in>in</in>
+    	<infoposts>Posts</infoposts>
+    	<info_add_newphrase>To display this text in your template , simple add this where you want to display your text</info_add_newphrase>
+    	<info_change_password><![CDATA[If you would like to change the password type a new one.<br/>Otherwise leave this blank.]]></info_change_password>
+    	<inf_upload_language>Browse Language File ( must be .xml format )</inf_upload_language>
+    	<instagram>Instagram</instagram>
+    	<instagram_url>Instagram URL</instagram_url>
+    	<isadmin>Admin</isadmin>
+    	<items>items</items>
+    	<items_per_page>Items Per Page</items_per_page>
+    	<items_per_popular>Items Per Popular</items_per_popular>
+    	<join_new>Join New</join_new>
+    	<knowledge>Knowledge</knowledge>
+    	<knowledge_base>Knowledge Base</knowledge_base>
+    	<lang>en</lang>
+    	<language>Language</language>
+    	<language_code>Language Code</language_code>
+    	<language_name>Language Name</language_name>
+    	<language_regex>Language Regex</language_regex>
+    	<language_settings>Language Setting</language_settings>
+    	<lastname>Lastname</lastname>
+    	<last_name_is_required>Last name is required</last_name_is_required>
+    	<local_time_is>Local time is</local_time_is>
+    	<location>Location</location>
+    	<logged_out>logged out</logged_out>
+    	<login>Login</login>
+    	<login_admin>Login Admin</login_admin>
+    	<login_error>Error:Username or password entered were incorrect.</login_error>
+    	<logout>Logout</logout>
+    	<make_default>Make Default</make_default>
+    	<make_sure_you_write_your_email_correctly>Make sure you write your email correctly.</make_sure_you_write_your_email_correctly>
+    	<member_for>Member for</member_for>
+    	<message>Message</message>
+    	<messege_is_required>Messege is required.</messege_is_required>
+    	<mgs_new_password>If you would like to change the password type a new one. Otherwise leave this blank.</mgs_new_password>
+    	<modified>Modified</modified>
+    	<msg_name_must_be_in_english>The user name must be in English and does not contain symbols or distance not less than 3 letters and no more than 16 characters. Symbol (_) is permitted.</msg_name_must_be_in_english>
+    	<name>Name</name>
+    	<name_available_registration>Username is available for registration.</name_available_registration>
+    	<name_not_available_registration>The name is not available for registration, a user by another user.</name_not_available_registration>
+    	<new>New</new>
+    	<news>News</news>
+    	<news_items>news Items</news_items>
+    	<new_password>New Password</new_password>
+    	<no>No</no>
+    	<nof_nopermission>Error Permission</nof_nopermission>
+    	<none>None</none>
+    	<normal>Normal</normal>
+    	<not_for_everyone>Not for everyone</not_for_everyone>
+    	<not_select_anything>Sorry it seems you do not select anything!</not_select_anything>
+    	<not_valid_format_upload>not have a valid format. Upload a png, jpg, gif, jpeg file type</not_valid_format_upload>
+    	<no_result>No Result</no_result>
+    	<options>Options</options>
+    	<order>Order</order>
+    	<orders_categorie_successfully>Orders Categorie Successfully</orders_categorie_successfully>
+    	<package_name>Package Name</package_name>
+    	<pages>Pages</pages>
+    	<pages_setting>Pages Setting</pages_setting>
+    	<page_about>Page About</page_about>
+    	<page_contact>Page Contact</page_contact>
+    	<page_privacy>Page Privacy</page_privacy>
+    	<page_views>Page Views</page_views>
+    	<parent>Parent</parent>
+    	<password>Password</password>
+    	<password_must_be_at_least_6_characters>Password must be at least 6 characters.</password_must_be_at_least_6_characters>
+    	<phrase>Phrase</phrase>
+    	<phrase_code>Phrase Code</phrase_code>
+    	<phrase_module>Phrase Module</phrase_module>
+    	<phrase_text>Phrase Text</phrase_text>
+    	<pin_post>Pin Post</pin_post>
+    	<please_activate_your_account>Please activate your account activation message been sent to your registered email</please_activate_your_account>
+    	<please_complete_the_fields>Please complete the fields</please_complete_the_fields>
+    	<popular_knowledgebase>Popular Knowledgebase</popular_knowledgebase>
+    	<popular_knowledge_base>Popular Knowledge Base</popular_knowledge_base>
+    	<popular_news>Popular News</popular_news>
+    	<posts>Posts</posts>
+    	<posts_chart>Posts Chart</posts_chart>
+    	<preview>Preview</preview>
+    	<privacy>privacy</privacy>
+    	<processing>Processing ...</processing>
+    	<profile>Profile</profile>
+    	<public_information>Public Information</public_information>
+    	<publish>Publish</publish>
+    	<publishnow>Publish Now</publishnow>
+    	<register>Register</register>
+    	<registration>Registration</registration>
+    	<registration_activation>Registration Activation</registration_activation>
+    	<reg_closed>Registration is closed at this time!</reg_closed>
+    	<reset>Reset</reset>
+    	<return_to_login>Return To Login</return_to_login>
+    	<re_enter_the_new_email_address>Re-enter the new Email address</re_enter_the_new_email_address>
+    	<re_enter_the_new_password>Re-enter the new password</re_enter_the_new_password>
+    	<role>Role</role>
+    	<save>Save</save>
+    	<saved_successfully>Saved successfully.</saved_successfully>
+    	<save_changes>Save Changes</save_changes>
+    	<search>search</search>
+    	<search_the_knowledge_base>search the Knowledge Base ...</search_the_knowledge_base>
+    	<send_message>Send Message</send_message>
+    	<send_your_message_has_been_successfully>Send your message has been successfully.</send_your_message_has_been_successfully>
+    	<settings>Settings</settings>
+    	<show_page_users>Show Page Users</show_page_users>
+    	<show_profile_users>Show Profile Users</show_profile_users>
+    	<sign_up>Sign up</sign_up>
+    	<sign_up_for_your_free>sign up for your free</sign_up_for_your_free>
+    	<site_wide_meta_description>Site wide Meta Description</site_wide_meta_description>
+    	<site_wide_meta_keywords>Site wide Meta Keywords</site_wide_meta_keywords>
+    	<slug>Slug</slug>
+    	<socials>Socials</socials>
+    	<socials_setting>Socials Setting</socials_setting>
+    	<statistics>Statistics</statistics>
+    	<status>Status</status>
+    	<subject>Subject</subject>
+    	<subject_is_required>Subject is required.</subject_is_required>
+    	<tagline>Tagline</tagline>
+    	<template>Template</template>
+    	<themes>Themes</themes>
+    	<themes_setting>Themes Setting</themes_setting>
+    	<theme_activated_successfully>theme activated successfully.</theme_activated_successfully>
+    	<this_field_is_required>This field is required</this_field_is_required>
+    	<timezone>Timezone</timezone>
+    	<time_format>Time Format</time_format>
+    	<title>Title</title>
+    	<toggle_navigation>Toggle navigation</toggle_navigation>
+    	<twitter>Twitter</twitter>
+    	<twitter_url>Twitter URL</twitter_url>
+    	<type>Type</type>
+    	<unique_visitors>Unique Visitors</unique_visitors>
+    	<up>Up</up>
+    	<update>Update</update>
+    	<upload>Upload</upload>
+    	<upload_file>Upload file</upload_file>
+    	<used_template>used template</used_template>
+    	<user>User</user>
+    	<username>Username</username>
+    	<usernames_cannot_be_changed>Usernames cannot be changed.</usernames_cannot_be_changed>
+    	<username_is_required>Username is required.</username_is_required>
+    	<users>Users</users>
+    	<users_chart>Users Chart</users_chart>
+    	<users_per_page>Users Per Page</users_per_page>
+    	<users_setting>Users Setting</users_setting>
+    	<user_only>User only</user_only>
+    	<utc_time_is>UTC time is</utc_time_is>
+    	<view>View</view>
+    	<views>views</views>
+    	<view_my_profile>View My Profile</view_my_profile>
+    	<view_post>View Post</view_post>
+    	<view_profile>Views Profile</view_profile>
+    	<visitors_chart>Visitors Chart</visitors_chart>
+    	<visits_the_day>Visits The Day</visits_the_day>
+    	<visits_the_month>Visits The Month</visits_the_month>
+    	<visits_the_year>Visits The Year</visits_the_year>
+    	<visit_site>Visit Site</visit_site>
+    	<vote_users_only>Vote Users Only</vote_users_only>
+    	<voting>Voting</voting>
+    	<voting_chart>Voting Chart</voting_chart>
+    	<voting_down>Voting Down</voting_down>
+    	<voting_up>Voting Up</voting_up>
+    	<website>Web Site</website>
+    	<website_email>Website Email</website_email>
+    	<website_name>Website Name</website_name>
+    	<website_url>Website URL</website_url>
+    	<welcome>Welcome</welcome>
+    	<well_done>Well done!</well_done>
+    	<yes>Yes</yes>
+    	<your_current_email_address>Your current email address</your_current_email_address>
+    	<youtube>Youtube</youtube>
+    	<youtube_url>Youtube URL</youtube_url>
+    </phrases>
+</helpdesk_language>
+            

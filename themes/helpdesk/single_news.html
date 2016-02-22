@@ -1,0 +1,89 @@
+<div class="col-md-12 main-content">
+    <div class="row question-filter" id="question_filter">
+        <div class="col-md-12 current-category">
+            <span><i class="fa fa-lightbulb-o"></i> {POST_TITLE} </span>
+        </div> 
+    </div>
+    <div class="col-md-2  main-content left-sidebar">
+        <div class="widget widget-statistic">
+        	<p class="questions-count">
+        		<span>{COUNT_POSTS}</span><br>
+                {LANG_KNOWLEDGE_BASE}
+        	</p>
+        	<p class="members-count">
+        		<span>{COUNT_TERMS}</span><br>
+                {LANG_CATEGORIES}
+        	</p>
+        </div>
+        <div class="widget widget-menus">
+            <div class="menu-left-menu-container">
+                <ul id="menu-left-menu-1" class="menu">
+                    <li class="<!-- IF POST_TERM_ID eq 0 -->active<!-- ENDIF -->"><a href="index.php?mode=news"><i class="fa fa-tags"></i> {LANG_ALL_NEWS}</a></li>
+                    <!-- BEGIN loop_terms -->
+                    <li class="<!-- IF loop_terms.TERM_ID eq POST_TERM_ID -->active<!-- ENDIF -->">
+                        <a href="index.php?mode=news&term_id={loop_terms.TERM_ID}"><i class="fa fa-tag"></i> {loop_terms.TERM_NAME}</a>
+                    </li>
+                    <!-- END loop_terms -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10 main-content">
+    <!-- IF IS_SHOW_POST_USERS_ONLY -->
+        <!-- INCLUDE msg_members_only.html -->
+    <!-- ELSE -->
+    <div id="question_content" class="col-md-12 main-content question-main-content question-item" data-id="{POST_ID}">
+        <div class="col-md-12 col-xs-12 q-right-content">
+            <div class="row">
+                <div class="col-md-8 col-xs-8 question-cat">
+                    <a href="users.php?username={POST_AUTHOR}">
+                        <span class="author-avatar"><img src="{AUTHOR_AVATER}" class="avatar" alt="{POST_AUTHOR}"></span>
+                        <span class="author-name">{POST_AUTHOR}</span>
+                    </a>
+                    <span title="{AUTHOR_GROUP_NAME}" class="user-badge" style="background: {AUTHOR_GROUP_COLOR};">{AUTHOR_GROUP_NAME}</span>                        
+                    <span class="question-time">{POST_TIME_AGO} {LANG_IN} </span>
+                    <span class="question-category">
+                        <a href="index.php?mode=news&term_id={POST_TERM_ID}">{POST_TERM_NAME}</a>
+                    </span>
+                </div>
+                <div class="col-md-4 col-xs-4 question-control">
+                    <!-- IF IS_USER -->
+                    <div class="vote" id="voting" data-postid="{POST_ID}">
+                        <div class="vote-span"><!-- voting-->
+            				<i class="voteset vote-up <!-- IF VOTE_UP -->disabled<!-- ENDIF -->" data-action="up" title="Vote up"></i>
+            				<div class="vote-score" style="color: <!-- IF VOTE_COLOR -->#208ACA<!-- ELSE -->red<!-- ENDIF --> ;">{POST_VOTE}</div>
+            				<i class="voteset vote-down <!-- IF VOTE_DOWN -->disabled<!-- ENDIF -->" data-action="down" title="Vote down"></i>
+            			</div>
+                    </div>
+                    <!-- ELSE -->
+                    <div class="vote">
+                        <div class="vote-span"><!-- voting-->
+            				<i class="vote-up ttipupleft" data-action="up" title="{LANG_VOTE_USERS_ONLY}"></i>
+            				<div class="vote-score" style="color: <!-- IF VOTE_COLOR -->#208ACA<!-- ELSE -->red<!-- ENDIF --> ;">{POST_VOTE}</div>
+            				<i class="vote-down ttipdownleft" data-action="down" title="{LANG_VOTE_USERS_ONLY}"></i>
+            			</div>
+                    </div>
+                    <!-- ENDIF -->
+                </div>                   
+            </div> 
+            <div class="clearfix"></div>
+            <div class="question-content">
+                <!-- IF SHOW_USER_ONLY -->
+                <div class="col-sm-12 align-center simple-messeges">
+                <strong>{LANG_CONTENT_IS_AVAILABLE_TO_MEMBERS_ONLY}</strong>
+                <br /><br />
+                {LANG_IF_YOU_ALREADY_HAVE_AN_ACCOUNT}  <a href="users.php?mode=login">{LANG_CLICK_HERE_TO_LOGIN}</a>
+                <br /><br />
+                    <div class="simple-messeges">
+                   {LANG_IF_YOU_DONT_HAVE_ACCOUNT} <a href="users.php?mode=register">{LANG_SIGN_UP}</a>
+                    </div>
+                </div>
+                <!-- ELSE -->
+                    {POST_CONTENT}
+                <!-- ENDIF -->
+            </div>    
+        </div>
+    </div>
+    <!-- ENDIF -->
+    </div>
+</div>

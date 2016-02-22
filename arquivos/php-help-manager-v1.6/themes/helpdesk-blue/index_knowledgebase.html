@@ -1,0 +1,52 @@
+<!-- INCLUDE header.html -->
+<div class="container">
+<!-- INCLUDE state_overview.html -->
+    <div class="row">   
+        <div class="col-md-3">
+            <!-- INCLUDE sidebar.html -->
+        </div>
+        <div class="col-md-9">
+            <!-- IF NOTFOUND -->
+                <ul class="nav nav-pills nav-stacked ticket-nav-details">
+                    <!-- BEGIN loop_article -->		
+                    <li>
+                        <div class="ticket-wrap">
+                            <div class="ticket-info">
+                                <span><i class="fa fa-lightbulb-o"></i></span>
+                                <h4 class=""><a href="index.php?viewid={loop_article.ID}">{loop_article.TITLE}</a></h4>
+                                <p><a href="index.php?catid={loop_article.CATID}">{loop_article.CATENAME}</a></p>
+                            </div>
+                            <div class="ticket-status">
+                                
+                                <div class="voting_wrapper" id="{loop_article.ID}">
+                                    <div class="voting_btn">
+                                        <div class="up_button">&nbsp;</div><span class="up_votes">0</span>
+                                    </div>
+                                    <div class="voting_btn">
+                                        <div class="down_button">&nbsp;</div><span class="down_votes">0</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <i class="fa fa-eye"></i> {loop_article.VIEWS}
+                                
+                                
+                            </div>
+                            <div class="ticket-date all-tickets">
+                                {loop_article.MODIFIED}
+                            </div>
+                        </div>
+                    </li>
+                    <!-- END loop_article -->
+                </ul>
+                <!-- IF SHOW_PAGINATION -->
+                    <ul class="pagination pagination-sm">
+                        {PAGINATION}
+                    </ul>
+                <!-- ENDIF -->
+            <!-- ELSE -->
+                <!-- INCLUDE index_notfound.html -->
+            <!-- ENDIF -->
+        </div>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

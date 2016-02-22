@@ -1,0 +1,51 @@
+<!-- INCLUDE header.html -->
+<div class="container">
+<!-- INCLUDE state_overview.html -->
+    <div class="row">   
+        <div class="col-md-6">
+            <h3>{LANG_POPULAR_KNOWLEDGE_BASE}</h3>
+            <!-- IF NOTFOUND_ART -->
+                <ul class="nav nav-pills nav-stacked ticket-nav-details">
+                    <!-- BEGIN loop_popular_article -->		
+                    <li class="all">
+                        <div class="ticket-wrap">
+                            <div class="ticket-info ticket-all">
+                                <span><i class="fa fa-lightbulb-o"></i></span>
+                                <h4 class=""><a href="index.php?viewid={loop_popular_article.ID}">{loop_popular_article.TITLE}</a></h4>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- END loop_popular_article -->
+                </ul>
+            <!-- ELSE -->
+                <div class="notfound-wrap">
+                    <div class="icon"><i class="fa fa-coffee"></i></div>
+                    <div class="text">{LANG_PUBLISHNOW}</div>
+                </div>
+            <!-- ENDIF -->
+        </div>
+        <div class="col-md-6">
+            <h3>{LANG_POPULAR_NEWS}</h3>
+            <!-- IF NOTFOUND_NEWS -->
+                <ul class="nav nav-pills nav-stacked ticket-nav-details">
+                    <!-- BEGIN loop_popular_news -->		
+                    <li class="all">
+                        <div class="ticket-wrap">
+                            <div class="ticket-info ticket-all">
+                                <span><i class="fa fa-bullhorn"></i></span>
+                                <h4 class=""><a href="index.php?viewid={loop_popular_news.ID}">{loop_popular_news.TITLE}</a></h4>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- END loop_popular_news -->
+                </ul>
+            <!-- ELSE -->
+                <div class="notfound-wrap">
+                    <div class="icon"><i class="fa fa-coffee"></i></div>
+                    <div class="text">{LANG_PUBLISHNOW}</div>
+                </div>
+            <!-- ENDIF -->
+        </div>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

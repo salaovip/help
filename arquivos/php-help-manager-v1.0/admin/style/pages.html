@@ -1,0 +1,53 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1>
+		{PAGE_TITLE} 
+	</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <!-- IF ACTION_TOKEN -->
+        <div class="alert alert-block alert-success">
+			<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+			<p>
+                <i class="icon-ok"></i> {LANG_CP_SAVED_SUCCESSFULLY}
+			</p>
+		</div>
+        <!-- ENDIF -->
+        <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>{LANG_CP_PAGES}</th>
+					<th style="width: 65px;text-align: center;">{LANG_CP_ACTION}</th>
+				</tr>
+			</thead>
+            <tbody>
+                <tr>
+					<td>{LANG_CP_CONTACT}</td>
+					<td style="text-align: center;">
+						<a href="pages.php?action=edit&page=contact" class="btn btn-mini btn-info tooltip-info btn-block" data-rel="tooltip" data-placement="top" title="" data-original-title="{LANG_CP_EDIT}">
+							<i class="icon-edit bigger-120"></i> {LANG_CP_EDIT}
+						</a>
+					</td>
+				</tr>
+                <tr>
+					<td>{LANG_CP_ABOUT_US}</td>
+					<td style="text-align: center;">
+						<a href="pages.php?action=edit&page=about" class="btn btn-mini btn-info tooltip-info btn-block" data-rel="tooltip" data-placement="top" title="" data-original-title="{LANG_CP_EDIT}">
+							<i class="icon-edit bigger-120"></i> {LANG_CP_EDIT}
+						</a>
+					</td>
+				</tr>
+                <tr>
+					<td>{LANG_CP_PRIVACY}</td>
+					<td style="text-align: center;">
+						<a href="pages.php?action=edit&page=privacy" class="btn btn-mini btn-info tooltip-info btn-block" data-rel="tooltip" data-placement="top" title="" data-original-title="{LANG_CP_EDIT}">
+							<i class="icon-edit bigger-120"></i> {LANG_CP_EDIT}
+						</a>
+					</td>
+				</tr>
+            </tbody>
+        </table>
+    </div>
+</div>               
+<!-- INCLUDE footer.html -->

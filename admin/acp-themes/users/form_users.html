@@ -1,0 +1,242 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1>
+		<i class="fa fa-tags"></i> {PAGE_TITLE}&nbsp;&nbsp;
+        <a href="users.php" class="btn btn-mini btn-success"><i class="fa fa-angle-left"></i> {LANG_CP_BACK}</a>
+	</h1>
+</div>
+<div class="popup-overlay hidden"></div>
+<div class="popup crop-popup profile-avatar-crop hidden">
+    <div class="popup-wrap">
+        <h4 class="popup-title">{LANG_CROP_AVATAR}</h4>
+        <div class="popup-content">
+            <div class="process-warp hidden">
+                <span class="process-text micon-inline-loading">{LANG_PROCESSING}</span>	 
+            </div>
+        </div>
+        <div class="popup-action-buttons">
+            <a class="btn btn-small btn-success micon-inline-accept" href="#"><span id="load"></span> {LANG_ACCEPT}</a>
+            <a class="btn btn-small btn-danger micon-inline-cancel" href="#"><span id="load"></span> {LANG_CENCEL}</a>    
+        </div>
+    </div>
+</div>
+<div class="popup crop-popup profile-cover-crop hidden">
+	<div class="popup-wrap">
+        <h4 class="popup-title">{LANG_CROP_COVER}</h4>
+        <div class="popup-content">
+            <div class="process-warp hidden">
+                <span class="process-text micon-inline-loading">{LANG_PROCESSING}</span>	 
+            </div>
+        </div>
+        <div class="popup-action-buttons">
+            <a class="btn btn-small btn-success micon-inline-accept" href="#"><span id="load"></span> {LANG_ACCEPT}</a>
+            <a class="btn btn-small btn-danger micon-inline-cancel" href="#"><span id="load"></span> {LANG_CENCEL}</a>    
+        </div>
+    </div>
+</div>
+<div class="clear_5"></div>
+<div class="row-fluid">
+    <form enctype="multipart/form-data" action="admin_ajax.php?do=editprofile" method="post" id="profileform" class="block">
+        <div class="span6" style="background: #F9F9F9;">
+            <div class="clear_20"></div>
+            <div class="inline-item avatar-uploader">
+                <div id="currentavatar" class="avatar-image-wrap profile-thumb-warp">
+                    <div class="upb-loading hidden">
+                        <i class="fa fa-spinner fa-pulse"></i>
+                    </div>
+                    <div class="process-warp hidden">
+                        <i class="fa fa-spinner fa-pulse"></i>
+                    </div>
+                    <img class="avatar-image avatar-80" src="{USER_AVATER}" />                        
+                </div>
+                <span class="upload-avatar-button btn btn-small btn-success"><i class="fa fa-cloud-upload"></i> {LANG_CHANGE_AVATAR}</span>
+                <div class="avatarerror form-messeges error light closable hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text"></span>
+                    </div>
+                </div>
+                <input type="file" id="avatarupload" class="avatarupload hidden" name="avatarimage"/>
+            </div>
+            <div class="clear_20"></div>     
+        </div>
+        <div class="span6" style="background: #F9F9F9;">
+            <div class="clear_20"></div>
+            <div class="inline-item cover-uploader">
+                <div class="cover-image-preview cover-image-wrap profile-thumb-warp">
+                    <div class="upb-loading hidden">
+                       <i class="fa fa-spinner fa-pulse"></i>
+                    </div>
+                    <div class="process-warp hidden">
+                        <i class="fa fa-spinner fa-pulse"></i>    
+                    </div>
+                   <img width="50" height="238" src="{USER_COVERIMG}" class="attachment-thumbnail profile-cover" alt=""/>                    
+                </div>
+                <span class="upload-cover-button btn btn-small btn-success"><i class="fa fa-cloud-upload"></i> {LANG_CHANGE_COVER}</span>
+                <div class="covererror form-messeges error light closable hidden">
+                    <div class="messege-warp">
+                        <span class="messege-text"></span>
+                    </div>
+                </div>
+                <input type="file" id="coverupload" class="coverupload hidden" name="coverimage"/>
+              </div>
+              <div class="clear_20"></div>
+        </div>
+        <div id="tempstatus" class="hidden"></div>
+        <input type="hidden" size="4" id="cropx" name="cropx"/>
+        <input type="hidden" size="4" id="cropy" name="cropy"/>
+        <input type="hidden" size="4" id="cropx2" name="cropx2"/>
+        <input type="hidden" size="4" id="cropy2" name="cropy2"/>
+        <input type="hidden" size="4" id="cropw" name="cropw"/>
+        <input type="hidden" size="4" id="croph" name="croph"/>
+        <input type="hidden" size="4" id="cropavatar" name="cropavatar" value="0"/>
+        <input type="hidden" size="4" id="cropcover" name="cropcover" value="0"/>
+        <input type="hidden" size="4" id="uploadtype" name="uploadtype" value="0"/>
+        <input name="action" type="hidden" id="action" value="updateuser" />
+        <input type="hidden" name="userid" value="{USER_UID}" />
+        <input type="hidden" name="username" value="{USER_USERNAME}" />
+    </form>
+</div>
+<hr />
+<form action="users.php" method="post" name="form" enctype="multipart/form-data" class="form-horizontal checkbox_form">
+    <input type="hidden" name="query" value="{QUERY}" />
+    <input type="hidden" name="userid" value="{USER_UID}" />
+    <div class="row-fluid"> 
+        <div class="span6">
+            <div class="control-group">
+    			<label class="control-label" for="form-field-name">{LANG_CP_USERNAME}</label>
+    			<div class="controls">
+    				<input type="text" id="form-field-name" name="name" placeholder="{LANG_CP_USERNAME}" value="{USER_USERNAME}" class="span10" readonly="" />
+                    <br />
+                    <i>{LANG_CP_USERNAME_CANNOT_BE_CHANGED}</i>
+    			</div>
+    		</div>
+            <div class="control-group">
+    			<label class="control-label" for="form-field-firstname">{LANG_CP_FIRSTNAME}</label>
+    			<div class="controls">
+    				<input type="text" id="form-field-firstname" name="firstname" placeholder="{LANG_CP_FIRSTNAME}" value="{USER_FIRSTNAME}" class="span10" />
+    			</div>
+    		</div>
+            <div class="control-group">
+    			<label class="control-label" for="form-field-lastname">{LANG_CP_LASTNAME}</label>
+    			<div class="controls">
+    				<input type="text" id="form-field-lastname" name="lastname" placeholder="{LANG_CP_LASTNAME}" value="{USER_LASTNAME}" class="span10" />
+    			</div>
+    		</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-email">{LANG_CP_EMAIL}</label>
+				<div class="controls">
+					<input type="email" id="form-field-email" name="email" placeholder="{LANG_CP_EMAIL}" value="{USER_EMAIL}" class="span10" />
+				</div>
+			</div>
+            <div class="control-group">
+    			<label class="control-label" for="form-field-location">{LANG_CP_LOCATION}</label>
+    			<div class="controls">
+    				<input type="text" id="form-field-location" name="location" placeholder="{LANG_CP_LOCATION}" value="{USER_LOCATION}" class="span10" />
+    			</div>
+    		</div>
+            
+            <div class="control-group">
+				<label class="control-label" for="form-field-website">Website</label>
+				<div class="controls">
+					<input type="text" id="form-field-website" name="website" placeholder="Website" value="{USER_WEBSITE}" class="span10" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-status">{LANG_CP_STATUS}</label>
+				<div class="controls">
+					<label><input name="status" type="checkbox" <!-- IF USER_STATUS -->checked=""<!-- ENDIF --> /></label>
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-password">{LANG_CP_PASSWORD}</label>
+				<div class="controls">
+					<input type="password" id="form-field-password" name="password" placeholder="{LANG_CP_PASSWORD}" value="" class="span10" />
+                    <br />
+                    <i>{LANG_CP_INFO_CHANGE_PASSWORD}</i>
+				</div>
+			</div>
+        </div>
+        <div class="span6 fa-icon">
+            <div class="control-group">
+    			<label class="control-label" for="form-field-twitter">Twitter ID</label>
+    			<div class="controls">
+                    <i class="fa fa-twitter"></i>
+    				<input type="text" id="form-field-twitter" name="twitter" placeholder="Twitter ID" value="{USER_TWITTER}" class="span10" />
+    			</div>
+    		</div>
+            <div class="control-group">
+    			<label class="control-label" for="form-field-facebook">Facebook ID</label>
+    			<div class="controls">
+                    <i class="fa fa-facebook"></i>
+    				<input type="text" id="form-field-facebook" name="facebook" placeholder="Facebook ID" value="{USER_FACEBOOK}" class="span10" />
+    			</div>
+    		</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-google">Google+ ID</label>
+				<div class="controls">
+                    <i class="fa fa-google-plus"></i>
+					<input type="text" id="form-field-google" name="google" placeholder="Google+ ID" value="{USER_GOOGLE}" class="span10" />
+				</div>
+			</div>
+            <div class="control-group">
+    			<label class="control-label" for="form-field-youtube">Youtube ID</label>
+    			<div class="controls">
+                    <i class="fa fa-youtube"></i>
+    				<input type="text" id="form-field-youtube" name="youtube" placeholder="Youtube ID" value="{USER_YOUTUBE}" class="span10" />
+    			</div>
+    		</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-vimeo">Vimeo ID</label>
+				<div class="controls">
+                    <i class="fa fa-vimeo"></i>
+					<input type="text" id="form-field-vimeo" name="vimeo" placeholder="Vimeo ID" value="{USER_VIMEO}" class="span10" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-flickr">Flickr ID</label>
+				<div class="controls">
+                    <i class="fa fa-flickr"></i>
+					<input type="text" id="form-field-flickr" name="flickr" placeholder="Flickr ID" value="{USER_FILCKR}" class="span10" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-dribbble">Dribbble ID</label>
+				<div class="controls">
+                    <i class="fa fa-dribbble"></i>
+					<input type="text" id="form-field-dribbble" name="dribbble" placeholder="Dribbble ID" value="{USER_DRIBBBLE}" class="span10" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label" for="form-field-pinterest">Pinterest ID</label>
+				<div class="controls">
+                    <i class="fa fa-pinterest"></i>
+					<input type="text" id="form-field-pinterest" name="pinterest" placeholder="Pinterest ID" value="{USER_PINTEREST}" class="span10" />
+				</div>
+			</div>
+        </div>
+    </div>
+    <hr />
+    <div class="row-fluid"> 
+        <div class="span12">
+    
+            <div class="control-group">
+				<label class="control-label" for="form-field-capabilities">{LANG_CP_ROLE}</label>
+				<div class="controls">
+                    <select class="span4" id="form-field-capabilities" name="capabilities">
+                        <option value="administrator" <!-- IF USER_ROLE eq 'administrator'-->selected="selected"<!-- ENDIF -->>{LANG_CP_ADMINISTRATOR}</option>
+                        <option value="user" <!-- IF  USER_ROLE eq 'user'-->selected="selected"<!-- ENDIF -->>{LANG_CP_USER}</option>
+                        
+                    </select>
+				</div>
+			</div>
+            
+        </div>
+        <div class="clear"></div>
+        <div class="form-actions">
+			<button class="btn btn-small btn-success"><i class="fa fa-floppy-o"></i> <!-- IF QUERY eq 'update' -->{LANG_CP_UPDATE}<!-- ELSE -->{LANG_CP_ADD}<!-- ENDIF --></button>
+			&nbsp; 
+			<button class="btn btn-small btn-danger" type="reset"><i class="fa fa-undo"></i> {LANG_CP_RESET}</button>
+		</div>
+    </div>
+</form>
+<!-- INCLUDE footer.html -->

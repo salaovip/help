@@ -1,0 +1,46 @@
+<?php if (!defined('IN_MEGABUGS')) exit; ?></div><!--/.page-content-->
+			</div><!--/.main-content-->
+		</div><!--/.main-container-->
+
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a>
+
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+		<!--inline styles related to this page-->
+        <!--basic scripts-->
+		<script src="assets/js/jquery.min.js"></script> 
+		<script src="assets/js/bootstrap.min.js"></script>
+		<!--page specific plugin scripts-->
+		<!--ace scripts-->
+        <script type="text/javascript" src="assets/js/fuelux/fuelux.spinner.min.js"></script>
+		<script type="text/javascript" src="assets/js/ace-elements.min.js"></script>
+		<script type="text/javascript" src="assets/js/ace.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="assets/js/colorpicker.js"></script>
+        <script type="text/javascript" src="assets/js/eye.js"></script>
+        <script type="text/javascript" src="assets/js/utils.js"></script>
+        <script type="text/javascript" src="assets/js/tinymce/tinymce.min.js"></script>
+        <script type="text/javascript" src="assets/js/thickbox/thickbox.js"></script>
+        <script type="text/javascript" src="assets/js/jquery/jquery.easy-pie-chart.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery/jquery.sparkline.min.js"></script>
+		<script type="text/javascript" src="assets/js/flot/jquery.flot.min.js"></script>
+		<script type="text/javascript" src="assets/js/flot/jquery.flot.pie.min.js"></script>
+		<script type="text/javascript" src="assets/js/flot/jquery.flot.resize.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.slimscroll.min.js"></script>
+        <script src="assets/js/summernote.min.js"></script>
+        <script type="text/javascript" src="assets/js/megatpl.js"></script>
+        <script type="text/javascript" src="assets/js/mega.js"></script>
+		<!--inline scripts related to this page-->
+        
+<script type="text/javascript">
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>
+
+	</body>
+</html>

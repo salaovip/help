@@ -1,0 +1,46 @@
+<a class="menu-toggler" id="menu-toggler" href="#">
+	<span class="menu-text"></span>
+</a>
+<div class="sidebar" id="sidebar">
+	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+			<a href="../" target="_blank" class="btn btn-small btn-success">
+				<i class="icon-home"></i>
+			</a>
+			<a href="index.php" class="btn btn-small btn-info">
+				<i class="icon-dashboard"></i>
+			</a>
+			<a href="index.php?mode=profile" class="btn btn-small btn-warning">
+				<i class="icon-user"></i>
+			</a>
+			<a href="settings.php?mode=general" class="btn btn-small btn-danger">
+				<i class="icon-cogs"></i>
+			</a>
+		</div>
+		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+			<span class="btn btn-success"></span>
+			<span class="btn btn-info"></span>
+			<span class="btn btn-warning"></span>
+			<span class="btn btn-danger"></span>
+		</div>
+	</div><!--#sidebar-shortcuts-->
+	<ul class="nav nav-list">
+        <!-- IF IS_DASHBOARD || IS_ADMIN --><li {CLASS_DASHBOARD}><a href="index.php"><i class="icon-dashboard"></i><span class="menu-text">{LANG_CP_DASHBOARD} </span></a></li><!-- ENDIF -->
+        <!-- IF IS_CATEGORYS_ARTICLE || IS_ADMIN || IS_CATEGORYS_NEWS --><li {CLASS_CATE}><a href="categorys.php"><i class="icon-tag"></i><span class="menu-text">{LANG_CP_MANAGE_CATEGORYS}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_ARTICLE || IS_ADMIN --><li {CLASS_ARTICLE}><a href="article.php"><i class="icon-lightbulb"></i><span class="menu-text">{LANG_CP_MANAGE_ARTICLE}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_NEWS || IS_ADMIN --><li {CLASS_NEWS}><a href="news.php"><i class="icon-bullhorn"></i><span class="menu-text">{LANG_CP_MANAGE_NEWS}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_FAQ || IS_ADMIN --><li {CLASS_FAQ}><a href="faq.php"><i class="icon-book"></i><span class="menu-text">{LANG_CP_MANAGE_FAQ}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_PAGES || IS_ADMIN --><li {CLASS_PAGES}><a href="pages.php"><i class="icon-file"></i><span class="menu-text">{LANG_CP_MANAGE_PAGES}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_SETTING || IS_ADMIN --><li {CLASS_SETTINGG}><a href="settings.php?mode=general"><i class="icon-cog"></i><span class="menu-text">{LANG_CP_GENERAL_SETTING}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_THEMES || IS_ADMIN --><li {CLASS_SETTINGT}><a href="settings.php?mode=themes"><i class="icon-desktop"></i><span class="menu-text">{LANG_CP_THEMES_SETTING}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_LANGUAGE || IS_ADMIN --><li {CLASS_LANG}><a href="language.php"><i class="icon-fire"></i><span class="menu-text">{LANG_CP_LANGUAGE_SETTINGS}</span></a></li><!-- ENDIF -->
+        <!-- IF IS_ADMIN -->
+        <li {CLASS_USERS}><a href="users.php"><i class="icon-user"></i><span class="menu-text">{LANG_CP_MANAGE_USERS}</span></a></li>
+        <li {CLASS_GROUPS}><a href="groups.php"><i class="icon-group"></i><span class="menu-text">{LANG_CP_MANAGE_GROUPS}</span></a></li>
+        <!-- ENDIF -->
+        
+	</ul><!--/.nav-list-->
+	<div class="sidebar-collapse" id="sidebar-collapse">
+		<i class="icon-double-angle-left"></i>
+	</div>
+</div>

@@ -1,0 +1,95 @@
+<!-- INCLUDE overall_header.html -->
+<div class="col-md-12 main-content">
+    <div class="row question-filter" id="question_filter">
+        <div class="col-md-12 current-category">
+            <span><i class="fa fa-life-ring"></i> {LANG_FAQ}</span>
+        </div> 
+    </div>
+    <div class="col-md-2  main-content left-sidebar">
+        <div class="widget widget-statistic">
+        	<p class="questions-count">
+        		<span>{COUNT_POSTS}</span><br>
+                {LANG_FAQ}
+        	</p>
+        	<p class="members-count">
+        		<span>{COUNT_TERMS}</span><br>
+                {LANG_CATEGORIES}
+        	</p>
+        </div>
+        <div class="widget widget-menus">
+            <div class="menu-left-menu-container">
+                <ul id="menu-left-menu-1" class="menu">
+                    <li class="<!-- IF THIS_TERM_ID eq 0 -->active<!-- ENDIF -->"><a href="index.php?mode=faq"><i class="fa fa-tags"></i> {LANG_ALL_FAQ}</a></li>
+                    <!-- BEGIN loop_terms -->
+                    <li class="<!-- IF loop_terms.TERM_ID eq THIS_TERM_ID -->active<!-- ENDIF -->">
+                        <a href="index.php?mode=faq&term_id={loop_terms.TERM_ID}"><i class="fa fa-tag"></i> {loop_terms.TERM_NAME}</a>
+                    </li>
+                    <!-- END loop_terms -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10 ">
+    <!-- IF IS_FAQ_USERS_ONLY -->
+        <!-- INCLUDE msg_members_only.html -->
+    <!-- ELSE -->
+        <div class="panel-group" id="accordion">
+       	    <!-- BEGIN loop_faq -->
+            <div class="panel panel-default">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{loop_faq.POST_ID}" class="collapsed">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><i class="fa fa-life-ring"></i> {loop_faq.POST_TITLE}</h4>
+                    </div>
+                </a>
+                <div id="collapse{loop_faq.POST_ID}" class="panel-collapse collapse" style="height: 0px;">
+                    <div class="panel-body">
+                        <div class="faq-head">
+                            <div class="row">
+                                <div class="col-md-8 col-xs-8 question-cat">
+                                    <a href="users.php?username={loop_faq.POST_AUTHOR}">
+                                        <span class="author-avatar"><img src="{loop_faq.AUTHOR_AVATER}" class="avatar" alt="{loop_faq.POST_AUTHOR}"></span>
+                                        <span class="author-name">{loop_faq.POST_AUTHOR}</span>
+                                    </a>
+                                    <span title="{loop_faq.AUTHOR_GROUP_NAME}" class="user-badge" style="background: {loop_faq.AUTHOR_GROUP_COLOR};">{loop_faq.AUTHOR_GROUP_NAME}</span>                        
+                                    <span class="question-time">{loop_faq.POST_TIME_AGO} {LANG_IN}</span>
+                                    <span class="question-category">
+                                        <a href="index.php?mode=faq&term_id={loop_faq.POST_TERM_ID}">{loop_faq.POST_TERM_NAME}</a>
+                                    </span>
+                                </div>
+                                <div class="col-md-4 col-xs-4 question-control">
+                                    <!-- IF IS_USER -->
+                                    <div class="vote" id="voting" data-postid="{loop_faq.POST_ID}">
+                                        <div class="vote-span"><!-- voting-->
+                            				<i class="voteset vote-up <!-- IF loop_faq.VOTE_UP -->disabled<!-- ENDIF -->" data-action="up" title="Vote up"></i>
+                            				<div class="vote-score" style="color: <!-- IF loop_faq.VOTE_COLOR -->#208ACA<!-- ELSE -->red<!-- ENDIF --> ;">{loop_faq.POST_VOTE}</div>
+                            				<i class="voteset vote-down <!-- IF loop_faq.VOTE_DOWN -->disabled<!-- ENDIF -->" data-action="down" title="Vote down"></i>
+                            			</div>
+                                    </div>
+                                    <!-- ELSE -->
+                                    <div class="vote">
+                                        <div class="vote-span"><!-- voting-->
+                            				<i class="vote-up ttipupleft" data-action="up" title="{LANG_VOTE_USERS_ONLY}"></i>
+                            				<div class="vote-score" style="color: <!-- IF loop_faq.VOTE_COLOR -->#208ACA<!-- ELSE -->red<!-- ENDIF --> ;">{loop_faq.POST_VOTE}</div>
+                            				<i class="vote-down ttipdownleft" data-action="down" title="{LANG_VOTE_USERS_ONLY}"></i>
+                            			</div>
+                                    </div>
+                                    <!-- ENDIF -->
+                                </div>                 
+                            </div>
+                        </div>
+                        <div class="clear10"></div>
+                        <p>{loop_faq.POST_CONTENT}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END loop_faq -->	
+        </div>
+        <!-- IF SHOW_PAGINATION -->
+            <ul class="pagination pagination-sm">
+                {PAGINATION}
+            </ul>
+        <!-- ENDIF -->
+        <!-- ENDIF -->
+    </div>
+</div>
+<!-- INCLUDE overall_footer.html -->

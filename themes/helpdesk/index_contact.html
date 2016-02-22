@@ -1,0 +1,71 @@
+<!-- INCLUDE overall_header.html -->
+<div class="col-md-12 main-content">
+    <div class="row question-filter" id="question_filter">
+        <div class="col-md-12 current-category">
+            <span><i class="fa fa-life-ring"></i> {POST_TITLE}</span>
+        </div> 
+    </div>
+    <div class="col-md-5">
+        {POST_CONTENT}
+    </div>
+    <div class="col-md-7">
+        <!-- IF MSGSEND -->
+            <div class="alert alert-success" role="alert">{LANG_SEND_YOUR_MESSAGE_HAS_BEEN_SUCCESSFULLY}</div>
+        <!-- ENDIF -->
+        <form name="loginform" id="loginform" class="contact" action="index.php?page=contact" method="post">
+        <input type="hidden" name="action" value="contact">
+            <div class="form-group">
+                <label for="username" style="margin-bottom: 5px;">{LANG_USERNAME}
+                <!-- IF ERROR_USERNAME -->
+                <div class="form-messeges error " style="display: inline-block;margin-left: 10px;">
+                    <div class="messege-warp">
+                        <span class="messege-text">{LANG_USERNAME_IS_REQUIRED}</span>
+                    </div>
+                </div>
+                <!-- ENDIF -->
+                </label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="{LANG_ENTER_USERNAME}" value="{VAL_USERNAME}">
+            </div>
+            <div class="form-group">
+                <label for="email" style="margin-bottom: 5px;">{LANG_EMAIL_ADDRESS}
+                <!-- IF ERROR_EMAIL -->
+                <div class="form-messeges error " style="display: inline-block;margin-left: 10px;">
+                    <div class="messege-warp">
+                        <span class="messege-text">{LANG_EMAIL_ADDRESS_IS_REQUIRED}</span>
+                    </div>
+                </div>
+                <!-- ENDIF -->
+                </label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="{LANG_ENTER_EMAIL_ADDRESS}" value="{VAL_EMAIL}">
+            </div>
+            <div class="form-group">
+                <label for="subject" style="margin-bottom: 5px;">{LANG_SUBJECT}
+                <!-- IF ERROR_SUBJECT -->
+                <div class="form-messeges error " style="display: inline-block;margin-left: 10px;">
+                    <div class="messege-warp">
+                        <span class="messege-text">{LANG_SUBJECT_IS_REQUIRED}</span>
+                    </div>
+                </div>
+                <!-- ENDIF -->
+                </label>
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="{LANG_ENTER_SUBJECT}" value="{VAL_SUBJECT}">
+            </div>
+            <div class="form-group">
+                <label for="message" style="margin-bottom: 5px;">{LANG_MESSAGE}
+                <!-- IF ERROR_MESSAGE -->
+                <div class="form-messeges error " style="display: inline-block;margin-left: 10px;">
+                    <div class="messege-warp">
+                        <span class="messege-text">{LANG_MESSEGE_IS_REQUIRED}</span>
+                    </div>
+                </div>
+                <!-- ENDIF -->
+                </label>
+                <textarea name="message" id="message" class="form-control" style="height: 110px!important;" placeholder="{LANG_ENTER_MESSAGE}">{VAL_MESSAGE}</textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="{LANG_SEND_MESSAGE}" class="form-button form-button-green">
+            </div>
+        </form>
+    </div>
+</div>
+<!-- INCLUDE overall_footer.html -->

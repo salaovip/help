@@ -1,0 +1,88 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1>{PAGE_TITLE}
+    <!-- IF QUERY eq 'update' -->
+        <a href="{THIS_SCRIPT}?post_type={POST_TYPE}&mode=new" class="btn btn-mini btn-success"><i class="fa fa-plus-circle"></i> {LANG_CP_ADD_NEW}</a>
+    <!-- ENDIF -->
+    </h1>
+</div>
+<!-- IF ACTION_TOKEN -->
+<div class="alert alert-block alert-success">
+	<button type="button" class="close" data-dismiss="alert"><i class="fa fa-remove"></i></button>
+	<p><i class="fa fa-chevron-circle-down"></i> {ACTION_TOKEN}</p>
+</div>
+<!-- ENDIF -->      
+<form action="{THIS_SCRIPT}?post_type={POST_TYPE}" method="post" name="form" class="checkbox_form">
+<input type="hidden" name="query" value="{QUERY}" />
+<input type="hidden" name="id" value="{POST_ID}" />
+<input type="hidden" name="term_id" value="0" />
+<input type="hidden" name="oldtitle" value="{TITLE}" /> 
+    <div class="row-fluid">
+    	<div class="span9">
+            <div class="control-group">
+				<div class="controls">
+					<input type="text" id="form-field-title" name="title" placeholder="{LANG_CP_ENTER_TITLE_HERE}" value="{POST_TITLE}" class="span12" />
+				</div>
+			</div>
+            <div class="control-group">
+                <div style="margin: 5px 0;">
+                    <div class="span8">
+                        <a href="javascript:void(0)" id="insert-picture-button" class="btn btn-small btn-primary" data-editor="content" title="{LANG_ADD_PICTURE}">
+                            <i class="fa fa-picture-o"></i> {LANG_ADD_PICTURE}
+                        </a>
+                    </div>
+                    <div class="span4" style="text-align: right;">
+
+                    </div>
+                </div>
+                <div class="clear"></div>
+				<div class="controls">
+                    <textarea class="wp-editor-area" style="height: 300px" autocomplete="off" cols="40" name="content" id="content">{POST_CONTENT}</textarea>
+				</div>
+			</div>
+        </div>
+        <div class="span3">
+            <div class="widget-box">
+				<div class="widget-header">
+					<h5 class="smaller">{LANG_CP_PUBLISH}</h5>
+				</div>
+                
+                <input name="status" type="hidden" value="on" />
+                <input name="pin_post" type="hidden" value="off" />
+                <input name="user_only" type="hidden" value="off" />
+				<div class="widget-body">
+					<div class="widget-main padding-6">
+                        <span class="span12" style="min-height: 0;"></span>
+                        <label class="control-label span12">{LANG_CP_TEMPLATE}</label>
+        				<div class="controls span12">
+                            <select class="span11" name="page_template">
+                                <option value="normal" <!-- IF  POST_PAGE_TEMP eq 'normal'-->selected="selected"<!-- ENDIF -->>{LANG_CP_NORMAL}</option>
+                                <option value="contact" <!-- IF POST_PAGE_TEMP eq 'contact'-->selected="selected"<!-- ENDIF -->>{LANG_CP_CONTACT}</option>
+                            </select>
+        				</div>
+                        <div class="clear"></div>
+                        <div class="widget-actions">
+            				<button class="btn btn-small btn-success"><!-- IF QUERY eq 'update' -->{LANG_CP_UPDATE}<!-- ELSE -->{LANG_CP_PUBLISH}<!-- ENDIF --></button>
+            			</div>              
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</form>
+<script src="assets/plugins/tinymce/tinymce.min.js"></script>
+<script>
+tinymce.init({
+    selector: "textarea#content",
+    plugins: [
+         "code,charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordcount,link,autolink,image,imagetools"
+    ],
+    resize:false,menubar:false,indent:false,relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,
+    fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,
+    toolbar1:"bold,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright",
+    toolbar2:"link,unlink,image,media,code,formatselect,underline,alignjustify",
+    toolbar3:"forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo",
+    toolbar4:"",
+ }); 
+</script>
+<!-- INCLUDE footer.html -->

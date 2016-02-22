@@ -1,0 +1,57 @@
+<a class="menu-toggler" id="menu-toggler" href="#"><span class="menu-text"></span></a>
+<div class="sidebar" id="sidebar">
+	<ul class="nav nav-list">
+    	<li {CLASS_DASHBOARD}><a href="index.php"><i class="fa fa-dashboard"></i><span class="menu-text">{LANG_CP_DASHBOARD} </span></a></li>
+        <li {CLASS_KNOWLEDGEBASE}>
+    		<a href="#" class="dropdown-toggle"><i class="fa fa-file-text-o"></i><span class="menu-text"> {LANG_CP_KNOWLEDGE_BASE} </span><b class="arrow fa fa-angle-down"></b></a>
+    		<ul class="submenu" style="display: <!-- IF !CLASS_KNOWLEDGEBASE -->none<!-- ENDIF -->;">
+    			<li {CLASS_KNOWLEDGEBASE_LEVEL}><a href="posts.php?post_type=knowledgebase"><i class="fa fa-file-text-o"></i></i>{LANG_CP_KNOWLEDGE_BASE}</a></li>
+                <li {CLASS_KNOWLEDGEBASE_ADDNEW}><a href="posts.php?post_type=knowledgebase&mode=new"><i class="fa fa-plus-circle"></i></i>{LANG_CP_ADD_NEW}</a></li>
+                <li {CLASS_KNOWLEDGEBASE_CATE}><a href="categories.php?taxonomy=knowledgebase"><i class="fa fa-tags"></i></i>{LANG_CP_CATEGORIES}</a></li>
+    		</ul>
+    	</li>
+        <li {CLASS_NEWS}>
+    		<a href="#" class="dropdown-toggle"><i class="fa fa-bullhorn"></i><span class="menu-text"> {LANG_CP_NEWS} </span><b class="arrow fa fa-angle-down"></b></a>
+    		<ul class="submenu" style="display: <!-- IF !CLASS_NEWS -->none<!-- ENDIF -->;">
+    			<li {CLASS_NEWS_LEVEL}><a href="posts.php?post_type=news"><i class="fa fa-bullhorn"></i></i>{LANG_CP_NEWS}</a></li>
+                <li {CLASS_NEWS_ADDNEW}><a href="posts.php?post_type=news&mode=new"><i class="fa fa-plus-circle"></i></i>{LANG_CP_ADD_NEW}</a></li>
+                <li {CLASS_NEWS_CATE}><a href="categories.php?taxonomy=news"><i class="fa fa-tags"></i></i>{LANG_CP_CATEGORIES}</a></li>
+    		</ul>
+    	</li>
+        <li {CLASS_FAQ}>
+    		<a href="#" class="dropdown-toggle"><i class="fa fa-life-ring"></i><span class="menu-text"> {LANG_CP_FAQ} </span><b class="arrow fa fa-angle-down"></b></a>
+    		<ul class="submenu" style="display: <!-- IF !CLASS_FAQ -->none<!-- ENDIF -->;">
+    			<li {CLASS_FAQ_LEVEL}><a href="posts.php?post_type=faq"><i class="fa fa-life-ring"></i></i>{LANG_CP_FAQ}</a></li>
+                <li {CLASS_FAQ_ADDNEW}><a href="posts.php?post_type=faq&mode=new"><i class="fa fa-plus-circle"></i></i>{LANG_CP_ADD_NEW}</a></li>
+                <li {CLASS_FAQ_CATE}><a href="categories.php?taxonomy=faq"><i class="fa fa-tags"></i></i>{LANG_CP_CATEGORIES}</a></li>
+    		</ul>
+    	</li>
+        <li {CLASS_PAGES}>
+    		<a href="#" class="dropdown-toggle"><i class="fa fa-file-text-o"></i><span class="menu-text"> {LANG_CP_PAGES} </span><b class="arrow fa fa-angle-down"></b></a>
+    		<ul class="submenu" style="display: <!-- IF !CLASS_PAGES -->none<!-- ENDIF -->;">
+    			<li {CLASS_PAGES_LEVEL}><a href="posts.php?post_type=pages"><i class="fa fa-file-text-o"></i></i>{LANG_CP_PAGES}</a></li>
+                <li {CLASS_PAGES_ADDNEW}><a href="posts.php?post_type=pages&mode=new"><i class="fa fa-plus-circle"></i></i>{LANG_CP_ADD_NEW}</a></li>
+    		</ul>
+    	</li>
+        
+        <li {CLASS_THEMES}>
+    		<a href="#" class="dropdown-toggle"><i class="fa fa-paint-brush"></i><span class="menu-text"> {LANG_CP_APPEARANCE} </span><b class="arrow fa fa-angle-down"></b></a>
+    		<ul class="submenu" style="display: <!-- IF !CLASS_THEMES -->none<!-- ENDIF -->;">
+    			<li {CLASS_THEMES_LEVEL}><a href="themes.php"><i class="fa fa-television"></i>{LANG_CP_THEMES_SETTING}</a></li>
+                {ADMIN_NAVSID_BAR}
+    		</ul>
+    	</li>
+        <li {CLASS_SETTING}>
+    		<a href="#" class="dropdown-toggle"><i class="fa fa-sliders"></i><span class="menu-text"> {LANG_CP_SETTINGS} </span><b class="arrow fa fa-angle-down"></b></a>
+    		<ul class="submenu" style="display: <!-- IF !CLASS_SETTING -->none<!-- ENDIF -->;">
+    			<li {CLASS_SETTINGG}><a href="settings.php?mode=general"><i class="fa fa-cog"></i>{LANG_CP_GENERAL_SETTING}</a></li>
+                <li {CLASS_SETTINGS}><a href="settings.php?mode=socials"><i class="fa fa-share-alt"></i>{LANG_CP_SOCIALS_SETTING}</a></li>
+                <li {CLASS_SETTINGU}><a href="settings.php?mode=users"><i class="fa fa-user"></i>{LANG_CP_USERS_SETTING}</a></li>
+                <li {CLASS_SETTINGP}><a href="settings.php?mode=pages"><i class="fa fa-file-text-o"></i>{LANG_CP_PAGES_SETTING}</a></li>
+                <li {CLASS_SETTINGET}><a href="settings.php?mode=emailtemplate"><i class="fa fa-envelope-o"></i>{LANG_CP_EMAIL_TEMPLATES}</a></li>
+                <li {CLASS_LANGUAGE}><a href="language.php"><i class="fa fa-language"></i>{LANG_CP_LANGUAGE_SETTINGS}</a></li>
+    		</ul>
+    	</li>
+        <li {CLASS_USERS}><a href="users.php"><i class="fa fa-user"></i><span class="menu-text">{LANG_CP_USERS} </span></a></li>
+	</ul>
+</div>

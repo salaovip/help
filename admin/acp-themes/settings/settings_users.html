@@ -1,0 +1,41 @@
+<!-- INCLUDE header.html -->
+<div class="page-header position-relative">
+	<h1><i class="fa fa-user"></i> {PAGE_TITLE}</h1>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+        <!-- IF ADMIN_SAVE -->
+        <div class="alert alert-block alert-success">
+			<button type="button" class="close" data-dismiss="alert"><i class="fa fa-remove"></i></button>
+			<p><i class="fa fa-chevron-circle-down"></i> {LANG_CP_SAVED_SUCCESSFULLY}</p>
+		</div>
+        <!-- ENDIF -->
+        <form action="settings.php?mode=users" method="post" name="form" class="form-horizontal form-socials checkbox_form">
+            <input type="hidden" name="query" value="savesetting" />
+            <div class="control-group">
+				<label class="control-label control-label2" for="form-field-userper_page">{LANG_CP_USERS_PER_PAGE}</label>
+				<div class="controls controls2">
+					<input type="number" class="input-mini span2" id="userper_page" name="userper_page" value="{ADMIN_USERP_PER_PAGE}" style="text-align: center;" />
+				</div>
+			</div>
+            <div class="control-group">
+				<label class="control-label control-label2" for="form-field-registration_status">{LANG_CP_REGISTRATION}</label>
+				<div class="controls controls2">
+                    <label class="checkbox"><input name="registration_status" type="checkbox" <!-- IF ADMIN_REGISTRATION_STATUS -->checked=""<!-- ENDIF --> /></label>
+                </div>
+			</div>
+            
+            <div class="control-group">
+				<label class="control-label control-label2" for="form-field-registration_activation">{LANG_CP_REGISTRATION_ACTIVATION}</label>
+				<div class="controls controls2">
+                    <label class="checkbox"><input name="registration_activation" type="checkbox" <!-- IF ADMIN_REGISTRATION_ACTIVATION -->checked=""<!-- ENDIF --> /></label>
+                </div>
+			</div>
+            
+            <div class="form-actions">
+				<button class="btn btn-small btn-success"><i class="fa fa-save"></i> {LANG_CP_SAVE_CHANGES}</button>
+			</div>
+        </form>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->
