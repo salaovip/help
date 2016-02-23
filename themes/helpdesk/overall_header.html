@@ -69,7 +69,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <!-- IF IS_USER -->
+    <!--
     <ul class="nav navbar-nav navbar-left phone">
     <li class="nav-item nav-user-toggle">
         <a href="users.php?mode=profile">
@@ -84,12 +84,12 @@
         </ul>
     </li>
     </ul>
-    <!-- ELSE -->
+    
     <ul class="nav navbar-nav navbar-left phone register-login">
     <li><a href="users.php?mode=register"><i class="fa fa-user-plus"></i> {LANG_REGISTER}</a></li>
     <li><a href="users.php?mode=login"><i class="fa fa-sign-in"></i> {LANG_LOGIN}</a></li>
     </ul>
-    <!-- ENDIF -->
+    -->
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -98,12 +98,10 @@
         <li class="<!-- IF IS_CRR_KNOW -->active<!-- ENDIF -->"><a href="index.php?mode=knowledgebase"><i class="fa fa-file-text-o"></i> {LANG_KNOWLEDGE_BASE}</a></li>
         <li class="<!-- IF IS_CRR_NEWS -->active<!-- ENDIF -->"><a href="index.php?mode=news"><i class="fa fa-bullhorn"></i> {LANG_NEWS}</a></li>
         <li class="<!-- IF IS_CRR_FAQ -->active<!-- ENDIF -->"><a href="index.php?mode=faq"><i class="fa fa-life-ring"></i> {LANG_FAQ}</a></li>
-        <!-- IF SHOW_PAGE_USERS -->
-        <li class="<!-- IF IS_CRR_USER -->active<!-- ENDIF -->"><a href="users.php"><i class="fa fa-user"></i> {LANG_USERS}</a></li>
-        <!-- ENDIF -->
+        
       </ul>
       <ul class="nav navbar-nav navbar-right ">
-        <!-- IF IS_USER -->
+        <!-- 
         <li class="nav-item nav-user-toggle">
             <a href="users.php?mode=profile">
                 <img class="avatar-30" src="{USER_IMG30}"> 
@@ -116,10 +114,9 @@
                 <li><a href="users.php?mode=logout" onclick="return confirm('Do you want to log out?');"><i class="fa fa-power-off"></i> {LANG_LOGOUT}</a></li>
             </ul>
         </li>
-        <!-- ELSE -->
         <li><a href="users.php?mode=register"><i class="fa fa-user-plus"></i> {LANG_REGISTER}</a></li>
         <li><a href="users.php?mode=login"><i class="fa fa-sign-in"></i> {LANG_LOGIN}</a></li>
-        <!-- ENDIF -->
+        -->
       </ul>
     </div><!-- /.navbar-collapse -->
     </div>

@@ -40,7 +40,7 @@ class session
         return $crc;
     }
     // get session
-    public function get_session($login = false){
+    public function get_session($login = true){
         global $db,$config;
         $ip = $_SERVER['REMOTE_ADDR'];
         $pc = $_SERVER['HTTP_USER_AGENT'];
