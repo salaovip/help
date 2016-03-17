@@ -40,7 +40,7 @@ class session
         return $crc;
     }
     // get session
-    public function get_session($login = true){
+    public function get_session($login = false){
         global $db,$config;
         $ip = $_SERVER['REMOTE_ADDR'];
         $pc = $_SERVER['HTTP_USER_AGENT'];
@@ -81,8 +81,23 @@ class session
         $db->sql_query("DELETE FROM ".SESSION_TABLE." WHERE `sessionhash`='".$_SESSION['sessionhash']."' and `location`='user' and `host`='".$ip."' and `useragent`='".$pc."'");
         return true;
     }
+    
     // get account
     public function get_account($filed){
+        global $db;
+        $ip      = '';
+        $pc      = '';
+        $result  = '';
+        $row     = '';
+        $id      = '';
+        $result2 = '';
+        $account = '';
+        $db->sql_freeresult($result);
+        $db->sql_freeresult($result2);
+        return $account;
+    }
+    // get account
+    public function get_account2($filed){
         global $db;
         $ip      = $_SERVER['REMOTE_ADDR'];
         $pc      = $_SERVER['HTTP_USER_AGENT'];
